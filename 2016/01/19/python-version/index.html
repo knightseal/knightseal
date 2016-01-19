@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Seal Tips">
 <meta property="og:description" content="print函数这个是肯定需要说明的，当我知道python2和3的区别第一个知识点可能就是print
 123456789# python2 我们这样使用print 123print a,b,cprint &amp;gt;&amp;gt;sys.stderr,something # python2 &amp;gt;&amp;gt;pipe_name语法，把输出重定向到一个管道，比如sys.stderr# pyhton3 我们这样使用">
-<meta property="og:updated_time" content="2016-01-19T08:28:12.000Z">
+<meta property="og:updated_time" content="2016-01-19T08:49:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python2和3的区别汇总">
 <meta name="twitter:description" content="print函数这个是肯定需要说明的，当我知道python2和3的区别第一个知识点可能就是print
@@ -123,6 +123,8 @@
                         
                             <li><a href="/tags/python">python</a></li>
                         
+                            <li><a href="/tags/hexo">hexo</a></li>
+                        
                             <li><a href="/tags/">标签云</a></li>
                         
                             <li><a href="/about/">关于我</a></li>
@@ -145,7 +147,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/python/" style="font-size: 10px;">python</a>
+                        <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/python/" style="font-size: 10px;">python</a>
                     </div>
                 </section>
                 
@@ -201,6 +203,8 @@
                     <li><a href="/archives/">所有文章</a></li>
                 
                     <li><a href="/tags/python">python</a></li>
+                
+                    <li><a href="/tags/hexo">hexo</a></li>
                 
                     <li><a href="/tags/">标签云</a></li>
                 
@@ -272,7 +276,7 @@
 <p>我们在python2 中写东西 一般都会在文件开始加入 coding: utf-8  指定文件编码格式<br>在python3中只有一种字符串类型Unicode字符串,可能就是在这个原因python3就没有unicode()这个函数了，因为不需要了</p>
 <h4 id="long__u957F_u6574_u578B"><a href="#long__u957F_u6574_u578B" class="headerlink" title="long 长整型"></a>long 长整型</h4><p>这个我相信很多语言都有long 这个数据格式，<br>python有为非浮点数准备的int和long类型。int类型的最大值不能超过sys.maxint，而且这个最大值是平台相关的。可以通过在数字的末尾附上一个L来定义长整型，显然，它比int类型表示的数字范围更大。<br>在Python 3里，只有一种整数类型int，大多数情况下，它很像Python 2里的长整型。由于已经不存在两种类型的整数，所以就没有必要使用特殊的语法去区别他们。<br>（再也看不到x=000000000000L &lt;-这个结尾的L了）,当然long()这个函数在python3中也是没有的，也就没有必要isinstance(x,long)去判断了</p>
 <h4 id="dict__u5B57_u5178_u7684_u533A_u522B"><a href="#dict__u5B57_u5178_u7684_u533A_u522B" class="headerlink" title="dict 字典的区别"></a>dict 字典的区别</h4><p>python3中的字典没有<code>has_key()</code>这个方法了，我目前的用的方法如下：总是觉得有点笨，有更好的方法请指正咕~~(╯﹏╰)b<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x = &#123;<span class="string">"tuzi"</span>:<span class="number">1</span>,<span class="string">"luobo"</span>:<span class="number">2</span>&#125;</span><br><span class="line"><span class="comment">#python2 中判断x中是否有tuzi这个key</span></span><br><span class="line">x.has_key(<span class="string">"tuzi"</span>)</span><br><span class="line"><span class="comment">#python3中我目前这样用</span></span><br><span class="line"><span class="keyword">if</span> <span class="string">"tuzi"</span> <span class="keyword">in</span> x.keys()</span><br></pre></td></tr></table></figure></p>
-<h4 id="u8FD8_u6709_u5F88_u591A_u4E00_u70B9_u52A0_u5427"><a href="#u8FD8_u6709_u5F88_u591A_u4E00_u70B9_u52A0_u5427" class="headerlink" title="还有很多一点加吧"></a>还有很多一点加吧</h4>
+<h4 id="u8FD8_u6709_u5F88_u591A_u4E00_u70B9_u70B9_u52A0_u5427"><a href="#u8FD8_u6709_u5F88_u591A_u4E00_u70B9_u70B9_u52A0_u5427" class="headerlink" title="还有很多一点点加吧"></a>还有很多一点点加吧</h4>
       
     </div>
     
@@ -282,6 +286,12 @@
 
 
     <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/01/19/hexo-404/">
+                    hexo-404
+                </a>
+            </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
@@ -297,7 +307,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#print_u51FD_u6570"><span class="toc-number">1.</span> <span class="toc-text">print函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#unicode"><span class="toc-number">2.</span> <span class="toc-text">unicode</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#long__u957F_u6574_u578B"><span class="toc-number">3.</span> <span class="toc-text">long 长整型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dict__u5B57_u5178_u7684_u533A_u522B"><span class="toc-number">4.</span> <span class="toc-text">dict 字典的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8FD8_u6709_u5F88_u591A_u4E00_u70B9_u52A0_u5427"><span class="toc-number">5.</span> <span class="toc-text">还有很多一点加吧</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#print_u51FD_u6570"><span class="toc-number">1.</span> <span class="toc-text">print函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#unicode"><span class="toc-number">2.</span> <span class="toc-text">unicode</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#long__u957F_u6574_u578B"><span class="toc-number">3.</span> <span class="toc-text">long 长整型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dict__u5B57_u5178_u7684_u533A_u522B"><span class="toc-number">4.</span> <span class="toc-text">dict 字典的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u8FD8_u6709_u5F88_u591A_u4E00_u70B9_u70B9_u52A0_u5427"><span class="toc-number">5.</span> <span class="toc-text">还有很多一点点加吧</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -385,7 +395,9 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2016/01/19/hexo-404/" title="上一篇: hexo-404">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -397,7 +409,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/python-version/">python2和3的区别汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/hexo-404/">hexo-404</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/python-version/">python2和3的区别汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/hello-world/">Hello World</a></li></ul>
     <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
