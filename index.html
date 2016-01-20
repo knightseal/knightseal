@@ -146,7 +146,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/随笔-python/" style="font-size: 10px;">-随笔 -python</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/python/" style="font-size: 10px;">python</a>
+                        <a href="/tags/随笔-python/" style="font-size: 10px;">-随笔 -python</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/python/" style="font-size: 20px;">python</a>
                     </div>
                 </section>
                 
@@ -224,6 +224,69 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-python-list-tuple" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/20/python-list-tuple/" class="article-date">
+      <time datetime="2016-01-20T08:20:18.000Z" itemprop="datePublished">2016-01-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/20/python-list-tuple/">python中的列表和元组</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h4 id="List_u548CTuple_u533A_u522B"><a href="#List_u548CTuple_u533A_u522B" class="headerlink" title="List和Tuple区别"></a>List和Tuple区别</h4><p>python中list是可变数据，创建以后是可以对数据进行写操作的，但是tuple元组是不可变的，只能进行读的操作<br>list和tuple 通过 <code>list()</code>和<code>tuple()</code> 可以互相转换</p>
+<h5 id="list"><a href="#list" class="headerlink" title="list"></a>list</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>]   <span class="comment"># a就是一个list</span></span><br><span class="line">print(dir(a)) <span class="comment"># 通过dir()</span></span><br><span class="line">[<span class="string">'__add__'</span>, <span class="string">'__class__'</span>, <span class="string">'__contains__'</span>, <span class="string">'__delattr__'</span>, <span class="string">'__delitem__'</span>, <span class="string">'__dir__'</span>, <span class="string">'__doc__'</span>, <span class="string">'__eq__'</span>, <span class="string">'__format__'</span>, <span class="string">'__ge__'</span>, <span class="string">'__getattribute__'</span>, <span class="string">'__getitem__'</span>, <span class="string">'__gt__'</span>, <span class="string">'__hash__'</span>, <span class="string">'__iadd__'</span>, <span class="string">'__imul__'</span>, <span class="string">'__init__'</span>, <span class="string">'__iter__'</span>, <span class="string">'__le__'</span>, <span class="string">'__len__'</span>, <span class="string">'__lt__'</span>, <span class="string">'__mul__'</span>, <span class="string">'__ne__'</span>, <span class="string">'__new__'</span>, <span class="string">'__reduce__'</span>, <span class="string">'__reduce_ex__'</span>, <span class="string">'__repr__'</span>, <span class="string">'__reversed__'</span>, <span class="string">'__rmul__'</span>, <span class="string">'__setattr__'</span>, <span class="string">'__setitem__'</span>, <span class="string">'__sizeof__'</span>, <span class="string">'__str__'</span>, <span class="string">'__subclasshook__'</span>, <span class="string">'append'</span>, <span class="string">'clear'</span>, <span class="string">'copy'</span>, <span class="string">'count'</span>, <span class="string">'extend'</span>, <span class="string">'index'</span>, <span class="string">'insert'</span>, <span class="string">'pop'</span>, <span class="string">'remove'</span>, <span class="string">'reverse'</span>, <span class="string">'sort'</span>]</span><br></pre></td></tr></table></figure>
+<p><code>append()</code> :方法用于向已经存在的list增加一个元素<br>``` python<br>a.append(4)<br>print(a)<br>[1,2,3,4]</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/python/">python</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-rebuild" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -251,7 +314,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h4 id="u5199_u7ED9_u81EA_u5DF1"><a href="#u5199_u7ED9_u81EA_u5DF1" class="headerlink" title="写给自己"></a>写给自己</h4><p>前面看了Alex的python自动化之路第一章对于他自己的一些经历，这么想想自己也是差不多是在2012年的时候开始接触python，当时写了上百个shell脚本，总觉得shell在运维管理中还是有些短板，其实一直知道python,哪怕重来没有不知道有python但是在运维面试很多jd都会写一条，精通shell，python，perl，慢慢的自己也开始自学python<br>,到现在也有几年了，从2013年开始陆陆续续的差不多都用python来完成需求功能和平时的工作，但是还是觉得自己的水平还是这么不行，只知其然不知其所以然，各种百度各种google，幸好公司有一位大牛，经常也会请教，就在这一步步的慢慢前行中，最近遇到sprak新版本更新发现早在1.5.0版本的spark的Dstarem已经支持python了,非常高兴，边尝试用python实现Sprark的的作业任务，其实官方给的例子已经非常简练和明确了，但是我还是使用了接近一天的时间才看懂，虽然最后做到了，虽然挺开心，但是莫名的沮丧<br>几乎是用排除法不断的尝试出来，其实我自己一直热爱运维，但是实际生活中运维的地位往往没有研发受到重视，在大部分公司研发好比厨师，是能够真正开发出产品，做得出东西的，而运维更像是服务员，这就是为什么小公司其实是不需要运维的，就像你见过小饭店里有所谓的服务吗？所以我自己的发展方向就是运维研发，我要做一个会“做饭的服务员”<br>再想想真的自己很早以前就有blog ，但是很少写文章，感觉自己做很多事情都没有坚持下去，2016年，写给自己，就2个字 “坚持!”</p>
+        <h4 id="u5199_u7ED9_u81EA_u5DF1_uFF1A_u575A_u6301"><a href="#u5199_u7ED9_u81EA_u5DF1_uFF1A_u575A_u6301" class="headerlink" title="写给自己：坚持"></a>写给自己：坚持</h4><p>前面看了Alex的python自动化之路第一章对于他自己的一些经历，这么想想自己也是差不多是在2012年的时候开始接触python，当时写了上百个shell脚本，总觉得shell在运维管理中还是有些短板，其实一直知道python,哪怕重来没有不知道有python但是在运维面试很多jd都会写一条，精通shell，python，perl，慢慢的自己也开始自学python<br>,到现在也有几年了，从2013年开始陆陆续续的差不多都用python来完成需求功能和平时的工作，但是还是觉得自己的水平还是这么不行，只知其然不知其所以然，各种百度各种google，幸好公司有一位大牛，经常也会请教，就在这一步步的慢慢前行中，最近遇到sprak新版本更新发现早在1.5.0版本的spark的Dstarem已经支持python了,非常高兴，边尝试用python实现Sprark的的作业任务，其实官方给的例子已经非常简练和明确了，但是我还是使用了接近一天的时间才看懂，虽然最后做到了，虽然挺开心，但是莫名的沮丧<br>几乎是用排除法不断的尝试出来，其实我自己一直热爱运维，但是实际生活中运维的地位往往没有研发受到重视，在大部分公司研发好比厨师，是能够真正开发出产品，做得出东西的，而运维更像是服务员，这就是为什么小公司其实是不需要运维的，就像你见过小饭店里有所谓的服务吗？所以我自己的发展方向就是运维研发，我要做一个会“做饭的服务员”<br>再想想真的自己很早以前就有blog ，但是很少写文章，感觉自己做很多事情都没有坚持下去，2016年，写给自己，就2个字 “坚持!”</p>
 
       
     </div>
