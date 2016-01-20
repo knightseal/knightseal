@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Seal Tips">
 <meta property="og:description" content="print函数这个是肯定需要说明的，当我知道python2和3的区别第一个知识点可能就是print
 123456789# python2 我们这样使用print 123print a,b,cprint &amp;gt;&amp;gt;sys.stderr,something # python2 &amp;gt;&amp;gt;pipe_name语法，把输出重定向到一个管道，比如sys.stderr# pyhton3 我们这样使用">
-<meta property="og:updated_time" content="2016-01-20T01:58:15.000Z">
+<meta property="og:updated_time" content="2016-01-20T01:59:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python2和3的区别汇总">
 <meta name="twitter:description" content="print函数这个是肯定需要说明的，当我知道python2和3的区别第一个知识点可能就是print
@@ -272,7 +272,7 @@
 <p>我们在python2 中写东西 一般都会在文件开始加入 coding: utf-8  指定文件编码格式<br>在python3中只有一种字符串类型Unicode字符串,可能就是在这个原因python3就没有unicode()这个函数了，因为不需要了</p>
 <h4 id="long__u957F_u6574_u578B"><a href="#long__u957F_u6574_u578B" class="headerlink" title="long 长整型"></a>long 长整型</h4><p>这个我相信很多语言都有long 这个数据格式，<br>python有为非浮点数准备的int和long类型。int类型的最大值不能超过sys.maxint，而且这个最大值是平台相关的。可以通过在数字的末尾附上一个L来定义长整型，显然，它比int类型表示的数字范围更大。<br>在Python 3里，只有一种整数类型int，大多数情况下，它很像Python 2里的长整型。由于已经不存在两种类型的整数，所以就没有必要使用特殊的语法去区别他们。<br>（再也看不到x=000000000000L &lt;-这个结尾的L了）,当然long()这个函数在python3中也是没有的，也就没有必要isinstance(x,long)去判断了</p>
 <h4 id="dict__u5B57_u5178_u7684_u533A_u522B"><a href="#dict__u5B57_u5178_u7684_u533A_u522B" class="headerlink" title="dict 字典的区别"></a>dict 字典的区别</h4><p>python3中的字典没有<code>has_key()</code>这个方法了，我目前的用的方法如下：总是觉得有点笨，有更好的方法请指正咕~~(╯﹏╰)b<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x = &#123;<span class="string">"tuzi"</span>:<span class="number">1</span>,<span class="string">"luobo"</span>:<span class="number">2</span>&#125;</span><br><span class="line"><span class="comment">#python2 中判断x中是否有tuzi这个key</span></span><br><span class="line">x.has_key(<span class="string">"tuzi"</span>)</span><br><span class="line"><span class="comment">#python3中我目前这样用</span></span><br><span class="line"><span class="keyword">if</span> <span class="string">"tuzi"</span> <span class="keyword">in</span> x.keys()</span><br></pre></td></tr></table></figure></p>
-<h4 id="pyc__u548Cpycache"><a href="#pyc__u548Cpycache" class="headerlink" title="pyc 和pycache"></a>pyc 和<strong>pycache</strong></h4><p>pyc是一种二进制文件，是由py文件经过编译后，生成的文件，是一种byte code，py文件变成pyc文件后，加载的速度有所提高，而且pyc是一种跨平台的字节码，是由python的虚拟机来执行的，这个是类似于JAVA或者.NET的虚拟机的概念。pyc的内容，是跟python的版本相关的，不同版本编译后的pyc文件是不同的，2.5编译的pyc文件，2.4版本的 python是无法执行的。<br>比如我们有一个b.py 写了一些方法，然后再写一个a.py import b.py里的方法，这样在第一次执行的时候 就会生成一个b.pyc 除非b.py进行了修改否则b.pyc是不会更新的，在python2版本中,如果有多种这种情况，那么在目录下面就会生成多个pyc，看起来很乱，所以在python3中 你会发现所有的pyc文件被放到了一个<br>“<strong>pycache</strong>“ 目录中</p>
+<h4 id="pyc__u548Cpycache"><a href="#pyc__u548Cpycache" class="headerlink" title="pyc 和pycache"></a>pyc 和<strong>pycache</strong></h4><p>pyc是一种二进制文件，是由py文件经过编译后，生成的文件，是一种byte code，py文件变成pyc文件后，加载的速度有所提高，而且pyc是一种跨平台的字节码，是由python的虚拟机来执行的，这个是类似于JAVA或者.NET的虚拟机的概念。pyc的内容，是跟python的版本相关的，不同版本编译后的pyc文件是不同的，2.5编译的pyc文件，2.4版本的 python是无法执行的。<br>比如我们有一个b.py 写了一些方法，然后再写一个a.py import b.py里的方法，这样在第一次执行的时候 就会生成一个b.pyc 除非b.py进行了修改否则b.pyc是不会更新的，在python2版本中,如果有多种这种情况，那么在目录下面就会生成多个pyc，看起来很乱，所以在python3中 你会发现所有的pyc文件被放到了一个<br><code>__pycache__</code> 目录中</p>
 <h4 id="u4E0D_u5B9A_u65F6_u66F4_u65B0"><a href="#u4E0D_u5B9A_u65F6_u66F4_u65B0" class="headerlink" title="不定时更新"></a>不定时更新</h4>
       
     </div>
