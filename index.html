@@ -251,10 +251,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h4 id="u53D8_u91CF_u548C_u5F15_u7528"><a href="#u53D8_u91CF_u548C_u5F15_u7528" class="headerlink" title="变量和引用"></a>变量和引用</h4><p>python中变量没有类型，只有对象才有类型，a=3 我们说a是一个int其实正确的说法是 a引用了一个int类型的对象值是3<br>如果都这么说 尼玛好累啊，所以在平时我们以为变量是有类型的，内存里面的数据我们要访问，我们肯定要解决咋么拿，总要有个地方代表我要拿什么,有东西来代表内存里面的数据,就好比我们windows系统里面的快捷方式,我们在桌面一个快捷方式指向了一个具体的文件夹,一个执行文件,一个网址等等可以把变量理解为一个标识,一个快捷方式,如下面草图:<br><img src="http://img.yseal.cn/pythonvar.png-1" alt=""></p>
-<h4 id="u4E00_u63A2_u7A76_u7ADF"><a href="#u4E00_u63A2_u7A76_u7ADF" class="headerlink" title="一探究竟"></a>一探究竟</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">a = <span class="number">9</span>                     <span class="comment"># a引用了9这个对象</span></span><br><span class="line">sys.getrefcount(a)        <span class="comment"># 打印a引用的对象的引用计数</span></span><br><span class="line"><span class="number">18</span>                        <span class="comment"># 输出18次</span></span><br><span class="line">b =a                      <span class="comment"># b 引用了a引用的对象</span></span><br><span class="line">id(a)                     <span class="comment"># 打印a和b引用对象的内存地址是相同的</span></span><br><span class="line"><span class="number">140318064267944</span></span><br><span class="line">id(b)</span><br><span class="line"><span class="number">140318064267944</span></span><br><span class="line">sys.getrefcount(a)        <span class="comment"># 再次打印a引用的对象计数</span></span><br><span class="line"><span class="number">19</span>                        <span class="comment"># 输出19次,因为b也引用了一次</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#下面我们让a引用其他的对象</span></span><br><span class="line">a = <span class="number">10</span></span><br><span class="line">sys.getrefcount(a)        <span class="comment"># 打印a引用的对象的引用计数</span></span><br><span class="line"><span class="number">28</span>                        <span class="comment"># 输出的不是9这个对象的引用而是10这个对象的引用计数</span></span><br><span class="line">sys.getrefcount(b)        <span class="comment"># 打印b引用的对象的引用计数</span></span><br><span class="line"><span class="number">18</span>                        <span class="comment"># 输出的是9这个对象的引用，由于a不再引用了9这个对象，所以引用计数就-1</span></span><br></pre></td></tr></table></figure>
-<p>当一个对象在内存里面的引用计数为0,也就是说没有变量引用对象了，这个对象就会被销毁，内存就回收了这部分空间</p>
-
+              <h4 id="u53D8_u91CF_u548C_u5F15_u7528"><a href="#u53D8_u91CF_u548C_u5F15_u7528" class="headerlink" title="变量和引用"></a>变量和引用</h4><p>python中变量没有类型，只有对象才有类型，a=3 我们说a是一个int其实正确的说法是 a引用了一个int类型的对象值是3<br>如果都这么说 尼玛好累啊，所以在平时我们以为变量是有类型的，内存里面的数据我们要访问，我们肯定要解决咋么拿，总要有个地方代表我要拿什么,有东西来代表内存里面的数据,就好比我们windows系统里面的快捷方式,我们在桌面一个快捷方式指向了一个具体的文件夹,一个执行文件,一个网址等等可以把变量理解为一个标识,一个快捷方式,如下面草图:<br>
+          
       
     </div>
     
@@ -271,6 +269,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/01/21/python-var/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
