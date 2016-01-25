@@ -146,7 +146,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/python-dict/" style="font-size: 10px;">python-dict</a> <a href="/tags/python-json/" style="font-size: 10px;">python-json</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+                        <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/python-dict/" style="font-size: 15px;">python-dict</a> <a href="/tags/python-json/" style="font-size: 10px;">python-json</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
                     </div>
                 </section>
                 
@@ -226,6 +226,67 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-python-dict-desc" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/25/python-dict-desc/" class="article-date">
+      <time datetime="2016-01-25T09:08:56.000Z" itemprop="datePublished">2016-01-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/25/python-dict-desc/">Python中的字典</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h5 id="u5148_u770B_u4E00_u4E0Bpython2_u548Cpython3__u5B57_u5178_u65B9_u6CD5_u7684_u533A_u522B"><a href="#u5148_u770B_u4E00_u4E0Bpython2_u548Cpython3__u5B57_u5178_u65B9_u6CD5_u7684_u533A_u522B" class="headerlink" title="先看一下python2和python3 字典方法的区别"></a>先看一下python2和python3 字典方法的区别</h5><p><img src="http://img.yseal.cn/python_dict.png-1" alt=""></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/python/">python</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python-dict/">python-dict</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-python-dict" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -255,8 +316,8 @@
           
               <h4 id="Python_u4E2D_u7684_u5B57_u5178_2Cjson_u6A21_u5757_2Ceval"><a href="#Python_u4E2D_u7684_u5B57_u5178_2Cjson_u6A21_u5757_2Ceval" class="headerlink" title="Python中的字典,json模块,eval"></a>Python中的字典,json模块,eval</h4><p>说到python中的字典真的和json数据很类似，且json被绝大部分各类开发者所使用,而eval和这2者什么关系,下面是我的总结</p>
 <h5 id="DICT_u5B57_u5178_VS_Json"><a href="#DICT_u5B57_u5178_VS_Json" class="headerlink" title="DICT字典 VS Json"></a>DICT字典 VS Json</h5><p><code>dcit</code>,是python中字典数据类型,有了dict可以很方便的对结构化解析数据,有点像最小化的关系型数据库,是key对于value比如<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="string">'name'</span>: <span class="string">'兔纸'</span>, <span class="string">'class'</span>: <span class="string">'One'</span>&#125; <span class="comment">#可用单引号和双引号</span></span><br></pre></td></tr></table></figure></p>
-<p><code>json</code>,是数据交换格式，JSON语法是JavaScript对象表示语法的子集,规范是：数据在键值对中,数据由逗号分隔,花括号保存对象,方括号保存数组,且<code>必须要用双引号包裹字符串</code>,<a href="http://json.org/">这是官方的说明</a>其中有一段是”A string is a sequence of zero or more Unicode characters, wrapped in double quotes, using backslash escapes. A character is represented as a single character string. A string is very much like a C or Java string.” 这篇总结只是涉及python 中dict和json的区别以及转换相关<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">a</span> = &#123;<span class="string">"name"</span>: <span class="string">"兔纸"</span>, <span class="string">"class"</span>: <span class="string">"One"</span>&#125; <span class="comment">#只能是双引号</span></span><br></pre></td></tr></table></figure></p>
-<p>我们看看区别（不定时更新）<br>
+<p><code>json</code>,是数据交换格式，JSON语法是JavaScript对象表示语法的子集,规范是：数据在键值对中,数据由逗号分隔,花括号保存对象,方括号保存数组,且<code>必须要用双引号包裹字符串</code>,<a href="http://json.org/">这是官方的说明</a>其中有一段是”A string is a sequence of zero or more Unicode characters, wrapped in double quotes, using backslash escapes. A character is represented as a single character string. A string is very much like a C or Java string.” 本文总结只是涉及python 中dict和json的区别以及转换相关<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">a</span> = &#123;<span class="string">"name"</span>: <span class="string">"兔纸"</span>, <span class="string">"class"</span>: <span class="string">"One"</span>&#125; <span class="comment">#只能是双引号</span></span><br></pre></td></tr></table></figure></p>
+<p>我们看看区别（To Do）<br>
           
       
     </div>
