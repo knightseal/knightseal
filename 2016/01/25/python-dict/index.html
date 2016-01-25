@@ -13,7 +13,7 @@ DICT字典 VS Jsondcit,是python中字典数据类型,有了dict可以很方便�
 <meta property="og:site_name" content="Seal Tips">
 <meta property="og:description" content="Python中的字典,json模块,eval说到python中的字典真的和json数据很类似，且json被绝大部分各类开发者所使用,而eval和这2者什么关系,下面是我的总结
 DICT字典 VS Jsondcit,是python中字典数据类型,有了dict可以很方便的对结构化解析数据,有点像最小化的关系型数据库,是key对于value比如1a = &amp;#123;&apos;name&apos;: &apos;兔纸&apos;, &apos;clas">
-<meta property="og:updated_time" content="2016-01-25T06:17:46.000Z">
+<meta property="og:updated_time" content="2016-01-25T08:08:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python中的字典和json的比较和eval内置方法">
 <meta name="twitter:description" content="Python中的字典,json模块,eval说到python中的字典真的和json数据很类似，且json被绝大部分各类开发者所使用,而eval和这2者什么关系,下面是我的总结
@@ -275,20 +275,26 @@ DICT字典 VS Jsondcit,是python中字典数据类型,有了dict可以很方便�
 <thead>
 <tr>
 <th style="text-align:left">json</th>
-<th style="text-align:right">python-dict</th>
+<th style="text-align:left">python-dict</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:left">只能用双引号包裹字符串</td>
-<td style="text-align:right">单引号和双引号都可以包裹字符串</td>
+<td style="text-align:left">单引号和双引号都可以包裹字符串</td>
 </tr>
 <tr>
-<td style="text-align:left">josn 可以是这样子[{“name”:x},{“age”:2}]</td>
-<td style="text-align:right">在python中[{“name”:x},{“age”:2}] 叫列表里面有2个字典的元素</td>
+<td style="text-align:left">json 可以是这样子[{“name”:x},{“age”:2}]</td>
+<td style="text-align:left">在python中[{“name”:x},{“age”:2}] 叫列表里面有2个字典的元素</td>
+</tr>
+<tr>
+<td style="text-align:left">如果python中的字典中都是用双引号来包裹字符串的,json才可以解析</td>
+<td style="text-align:left">python 可以把json数据直接当成字典或者礼拜使用</td>
 </tr>
 </tbody>
 </table>
+<h5 id="u6240_u8C13_u7684python_u7684dict_u548Cjson_u76F8_u4E92_u64CD_u4F5C_u8F6C_u6362"><a href="#u6240_u8C13_u7684python_u7684dict_u548Cjson_u76F8_u4E92_u64CD_u4F5C_u8F6C_u6362" class="headerlink" title="所谓的python的dict和json相互操作转换"></a>所谓的python的dict和json相互操作转换</h5><p>python中把字典转换从json格式或者相互操作，这是伪命题：因为python可以直接把json数据拿来用的,那转个毛呢？<br>比如：我们把{“name”:x},{“age”:2} 这种数据需要写入到文件且要保证这种数据格式，我们希望下次读取可以直接当成字典来用<br>首先要把这个数据变成字符串然后写到文件中,读取的时候{“name”:x},{“age”:2} 就变成了一个字符串,我们需要把这个数据格式化为字典格式来用<br>又比如：我们调用外包http接口，对方吐出的json格式数据，但是http 去读取回来 也是一个字符串,我们同样想办法转成字典来操作<br>这时候就需要python 的默认lib库json，因为json数据格式 python可以直接拿来当字典用,<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#19968;&#33324;&#26159;&#29992;python&#30340;lib json,&#22312;python2.4&#20013;&#36825;&#20010;&#27169;&#22359;&#21483;simplejson&#10;&#10;&#36825;&#37324;&#25343;json&#27169;&#22359;&#26469;&#20030;&#20363;&#10;``` python&#10;import json&#10;print([ i for i in dir(json) if not i.startswith(&#39;_&#39;)]) # &#25171;&#21360;&#20986;&#36825;&#20010;json&#27169;&#22359;&#19979;&#38754;&#30340;&#26041;&#27861;&#10;[&#39;JSONDecoder&#39;, &#39;JSONEncoder&#39;, &#39;decoder&#39;, &#39;dump&#39;, &#39;dumps&#39;, &#39;encoder&#39;, &#39;load&#39;, &#39;loads&#39;, &#39;scanner&#39;]&#10;a = &#39;&#123;&#34;name&#34;:&#34;Seal&#34;,&#34;age&#34;:99&#125;&#39; #&#26174;&#28982;&#36825;&#26159;&#19968;&#20010;&#23383;&#31526;&#20018;&#10;x = json.loads(a) # &#20351;&#29992;json.loads &#26684;&#24335;&#21270;&#20026;json&#25968;&#25454;&#25110;&#32773;&#21483;&#36716;&#25104;&#23383;&#20856;&#10;type(x)&#10;dict&#10;&#10;b = &#123;&#34;name&#34;:&#34;Seal&#34;,&#34;age&#34;:99&#125;&#10;y = json.dumps(b) # &#20351;&#29992;json.dumps &#25226;&#19968;&#20010;json&#26684;&#24335;&#25968;&#25454;&#25110;&#32773;&#21483;&#23383;&#20856;&#36716;&#20026;&#23383;&#31526;&#20018;&#10;type(y)&#10;str</span><br></pre></td></tr></table></figure></p>
+<p>那python中字典同样可以用单引号的，这个时候则么办呢？<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">import json</span><br><span class="line">a = "&#123;'name':'Seal','age':99&#125;" #显然这是一个字符串</span><br><span class="line">x = json.loads(a) # 我们再次使用json模块的loads方法来看看</span><br><span class="line">ValueError                                Traceback (most recent call last)</span><br><span class="line">&lt;ipython-input-23-6bb448117314&gt; in &lt;module&gt;()</span><br><span class="line">----&gt; 1 x = json.loads(a)</span><br><span class="line"></span><br><span class="line">/usr/lib64/python2.7/json/__init__.pyc in loads(s, encoding, cls, object_hook, parse_float, parse_int, parse_constant, object_pairs_hook, **kw)</span><br><span class="line">    336             parse_int is None and parse_float is None and</span><br><span class="line">    337             parse_constant is None and object_pairs_hook is None and not kw):</span><br><span class="line">--&gt; 338         return _default_decoder.decode(s)</span><br><span class="line">    339     if cls is None:</span><br><span class="line">    340         cls = JSONDecoder</span><br><span class="line"></span><br><span class="line">/usr/lib64/python2.7/json/decoder.pyc in decode(self, s, _w)</span><br><span class="line">    363</span><br><span class="line">    364         """</span><br><span class="line">--&gt; 365         obj, end = self.raw_decode(s, idx=_w(s, 0).end())</span><br><span class="line">    366         end = _w(s, end).end()</span><br><span class="line">    367         if end != len(s):</span><br><span class="line"></span><br><span class="line">/usr/lib64/python2.7/json/decoder.pyc in raw_decode(self, s, idx)</span><br><span class="line">    379         """</span><br><span class="line">    380         try:</span><br><span class="line">--&gt; 381             obj, end = self.scan_once(s, idx)</span><br><span class="line">    382         except StopIteration:</span><br><span class="line">    383             raise ValueError("No JSON object could be decoded")</span><br><span class="line"></span><br><span class="line">ValueError: Expecting property name: line 1 column 2 (char 1)</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -314,7 +320,7 @@ DICT字典 VS Jsondcit,是python中字典数据类型,有了dict可以很方便�
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Python_u4E2D_u7684_u5B57_u5178_2Cjson_u6A21_u5757_2Ceval"><span class="toc-number">1.</span> <span class="toc-text">Python中的字典,json模块,eval</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#DICT_u5B57_u5178_VS_Json"><span class="toc-number">1.1.</span> <span class="toc-text">DICT字典 VS Json</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Python_u4E2D_u7684_u5B57_u5178_2Cjson_u6A21_u5757_2Ceval"><span class="toc-number">1.</span> <span class="toc-text">Python中的字典,json模块,eval</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#DICT_u5B57_u5178_VS_Json"><span class="toc-number">1.1.</span> <span class="toc-text">DICT字典 VS Json</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u6240_u8C13_u7684python_u7684dict_u548Cjson_u76F8_u4E92_u64CD_u4F5C_u8F6C_u6362"><span class="toc-number">1.2.</span> <span class="toc-text">所谓的python的dict和json相互操作转换</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
