@@ -6,18 +6,18 @@
   <title>Python中的字典,json,eval | Seal Tips</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Python中的字典,json模块,eval说到python中的字典真的和json数据很类似，且json被绝大部分各类开发者所使用,而eval和这2者什么关系,下面是我的总结
-DICT字典 VS Jsondcit,是python中叫字典类,有了dict可以很方便的对结构化解析数据,有点像最小化的关系型数据库,比如 a = {‘name’: ‘兔纸’, ‘age’: 99} 这就是一个字典json,">
+DICT字典 VS Jsondcit,是python中字典数据类型,有了dict可以很方便的对结构化解析数据,有点像最小化的关系型数据库,比如12345	a = &amp;#123;&apos;name&apos;: &apos;兔纸&apos;, &apos;age&apos;: 99&amp;#">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python中的字典,json,eval">
 <meta property="og:url" content="http://knightseal.github.io/2016/01/25/python-dict/index.html">
 <meta property="og:site_name" content="Seal Tips">
 <meta property="og:description" content="Python中的字典,json模块,eval说到python中的字典真的和json数据很类似，且json被绝大部分各类开发者所使用,而eval和这2者什么关系,下面是我的总结
-DICT字典 VS Jsondcit,是python中叫字典类,有了dict可以很方便的对结构化解析数据,有点像最小化的关系型数据库,比如 a = {‘name’: ‘兔纸’, ‘age’: 99} 这就是一个字典json,">
-<meta property="og:updated_time" content="2016-01-25T05:48:24.000Z">
+DICT字典 VS Jsondcit,是python中字典数据类型,有了dict可以很方便的对结构化解析数据,有点像最小化的关系型数据库,比如12345	a = &amp;#123;&apos;name&apos;: &apos;兔纸&apos;, &apos;age&apos;: 99&amp;#">
+<meta property="og:updated_time" content="2016-01-25T05:52:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python中的字典,json,eval">
 <meta name="twitter:description" content="Python中的字典,json模块,eval说到python中的字典真的和json数据很类似，且json被绝大部分各类开发者所使用,而eval和这2者什么关系,下面是我的总结
-DICT字典 VS Jsondcit,是python中叫字典类,有了dict可以很方便的对结构化解析数据,有点像最小化的关系型数据库,比如 a = {‘name’: ‘兔纸’, ‘age’: 99} 这就是一个字典json,">
+DICT字典 VS Jsondcit,是python中字典数据类型,有了dict可以很方便的对结构化解析数据,有点像最小化的关系型数据库,比如12345	a = &amp;#123;&apos;name&apos;: &apos;兔纸&apos;, &apos;age&apos;: 99&amp;#">
   
     <link rel="alternative" href="/atom.xml" title="Seal Tips" type="application/atom+xml">
   
@@ -266,8 +266,8 @@ DICT字典 VS Jsondcit,是python中叫字典类,有了dict可以很方便的对�
       
           
         <h4 id="Python_u4E2D_u7684_u5B57_u5178_2Cjson_u6A21_u5757_2Ceval"><a href="#Python_u4E2D_u7684_u5B57_u5178_2Cjson_u6A21_u5757_2Ceval" class="headerlink" title="Python中的字典,json模块,eval"></a>Python中的字典,json模块,eval</h4><p>说到python中的字典真的和json数据很类似，且json被绝大部分各类开发者所使用,而eval和这2者什么关系,下面是我的总结</p>
-<h5 id="DICT_u5B57_u5178_VS_Json"><a href="#DICT_u5B57_u5178_VS_Json" class="headerlink" title="DICT字典 VS Json"></a>DICT字典 VS Json</h5><p><code>dcit</code>,是python中叫字典类,有了dict可以很方便的对结构化解析数据,有点像最小化的关系型数据库,比如 a = {‘name’: ‘兔纸’, ‘age’: 99} 这就是一个字典<br><code>json</code>,是数据交换格式，JSON语法是JavaScript对象表示语法的子集,规范是：数据在键值对中,数据由逗号分隔,花括号保存对象,方括号保存数组,且<code>必须要用双引号包裹字符串</code>,<a href="http://json.org/" target="_blank" rel="external">这是官方的说明</a>其中有一段是”A string is a sequence of zero or more Unicode characters, wrapped in double quotes, using backslash escapes. A character is represented as a single character string. A string is very much like a C or Java string.” 这篇总结只是涉及python 中dict和json的区别以及转换相关<br><a id="more"></a></p>
-
+<h5 id="DICT_u5B57_u5178_VS_Json"><a href="#DICT_u5B57_u5178_VS_Json" class="headerlink" title="DICT字典 VS Json"></a>DICT字典 VS Json</h5><p><code>dcit</code>,是python中字典数据类型,有了dict可以很方便的对结构化解析数据,有点像最小化的关系型数据库,比如<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">	a = &#123;<span class="string">'name'</span>: <span class="string">'兔纸'</span>, <span class="string">'age'</span>: <span class="number">99</span>&#125; </span><br><span class="line">```python</span><br><span class="line">`json`,是数据交换格式，JSON语法是JavaScript对象表示语法的子集,规范是：数据在键值对中,数据由逗号分隔,花括号保存对象,方括号保存数组,且`必须要用双引号包裹字符串`,[这是官方的说明](http://json.org/)其中有一段是<span class="string">"A string is a sequence of zero or more Unicode characters, wrapped in double quotes, using backslash escapes. A character is represented as a single character string. A string is very much like a C or Java string."</span> 这篇总结只是涉及python 中dict和json的区别以及转换相关</span><br><span class="line">```json</span><br><span class="line">	a = &#123;<span class="string">"name"</span>: <span class="string">"兔纸"</span>, <span class="string">"age"</span>: <span class="string">"99"</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
       
     </div>
     
