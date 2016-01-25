@@ -13,7 +13,7 @@ DICT字典 VS Jsondcit,是python中字典数据类型,有了dict可以很方便�
 <meta property="og:site_name" content="Seal Tips">
 <meta property="og:description" content="Python中的字典,json模块,eval说到python中的字典真的和json数据很类似，且json被绝大部分各类开发者所使用,而eval和这2者什么关系,下面是我的总结
 DICT字典 VS Jsondcit,是python中字典数据类型,有了dict可以很方便的对结构化解析数据,有点像最小化的关系型数据库,是key对于value比如1a = &amp;#123;&apos;name&apos;: &apos;兔纸&apos;, &apos;clas">
-<meta property="og:updated_time" content="2016-01-25T06:15:21.000Z">
+<meta property="og:updated_time" content="2016-01-25T06:17:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python中的字典和json的比较和eval内置方法">
 <meta name="twitter:description" content="Python中的字典,json模块,eval说到python中的字典真的和json数据很类似，且json被绝大部分各类开发者所使用,而eval和这2者什么关系,下面是我的总结
@@ -268,7 +268,25 @@ DICT字典 VS Jsondcit,是python中字典数据类型,有了dict可以很方便�
         <h4 id="Python_u4E2D_u7684_u5B57_u5178_2Cjson_u6A21_u5757_2Ceval"><a href="#Python_u4E2D_u7684_u5B57_u5178_2Cjson_u6A21_u5757_2Ceval" class="headerlink" title="Python中的字典,json模块,eval"></a>Python中的字典,json模块,eval</h4><p>说到python中的字典真的和json数据很类似，且json被绝大部分各类开发者所使用,而eval和这2者什么关系,下面是我的总结</p>
 <h5 id="DICT_u5B57_u5178_VS_Json"><a href="#DICT_u5B57_u5178_VS_Json" class="headerlink" title="DICT字典 VS Json"></a>DICT字典 VS Json</h5><p><code>dcit</code>,是python中字典数据类型,有了dict可以很方便的对结构化解析数据,有点像最小化的关系型数据库,是key对于value比如<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="string">'name'</span>: <span class="string">'兔纸'</span>, <span class="string">'class'</span>: <span class="string">'One'</span>&#125; <span class="comment">#可用单引号和双引号</span></span><br></pre></td></tr></table></figure></p>
 <p><code>json</code>,是数据交换格式，JSON语法是JavaScript对象表示语法的子集,规范是：数据在键值对中,数据由逗号分隔,花括号保存对象,方括号保存数组,且<code>必须要用双引号包裹字符串</code>,<a href="http://json.org/" target="_blank" rel="external">这是官方的说明</a>其中有一段是”A string is a sequence of zero or more Unicode characters, wrapped in double quotes, using backslash escapes. A character is represented as a single character string. A string is very much like a C or Java string.” 这篇总结只是涉及python 中dict和json的区别以及转换相关<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">a</span> = &#123;<span class="string">"name"</span>: <span class="string">"兔纸"</span>, <span class="string">"class"</span>: <span class="string">"One"</span>&#125; <span class="comment">#只能是双引号</span></span><br></pre></td></tr></table></figure></p>
-<p>我们看看区别（不定时更新）<br><a id="more"></a><br>| json | python-dict|<br>| :—————— | ——————–:|<br>| 只能用双引号包裹字符串 | 单引号和双引号都可以包裹字符串|<br>| josn 可以是这样子[{“name”:x},{“age”:2}] |在python中[{“name”:x},{“age”:2}] 叫列表里面有2个字典的元素|</p>
+<p>我们看看区别（不定时更新）<br><a id="more"></a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">json</th>
+<th style="text-align:right">python-dict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">只能用双引号包裹字符串</td>
+<td style="text-align:right">单引号和双引号都可以包裹字符串</td>
+</tr>
+<tr>
+<td style="text-align:left">josn 可以是这样子[{“name”:x},{“age”:2}]</td>
+<td style="text-align:right">在python中[{“name”:x},{“age”:2}] 叫列表里面有2个字典的元素</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
