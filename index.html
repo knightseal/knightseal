@@ -146,7 +146,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/python-dict/" style="font-size: 15px;">python-dict</a> <a href="/tags/python-json/" style="font-size: 10px;">python-json</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+                        <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/python-dict/" style="font-size: 10px;">python-dict</a> <a href="/tags/python-json/" style="font-size: 10px;">python-json</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
                     </div>
                 </section>
                 
@@ -229,8 +229,8 @@
     <article id="post-python-dict-desc" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/01/25/python-dict-desc/" class="article-date">
-      <time datetime="2016-01-25T09:08:56.000Z" itemprop="datePublished">2016-01-25</time>
+      <a href="/2016/01/26/python-dict-desc/" class="article-date">
+      <time datetime="2016-01-26T02:32:39.000Z" itemprop="datePublished">2016-01-26</time>
 </a>
     </div>
   
@@ -239,43 +239,29 @@
       <input type="hidden" class="isFancy" />
     
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/25/python-dict-desc/">Python中的字典</a>
-    </h1>
-  
-
-      </header>
-      
-    
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>####Python 字典 dict<br>python字典是序列化数据非常方便,就像最简单的关系型数据库,可以和list互相嵌套<br>a = {key:value} 建议还是使用双引号来包裹字符串，这样子以后转存为字符串后再次序列号时方便<br>dict 有几个关键字: “无序的,可变对象,key唯一,可嵌套”</p>
-<p>####dict func</p>
-<p>######<code>clear()</code> 清楚字典数据 like list clear<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">a  = &#123;<span class="string">"name"</span>:<span class="number">1</span>&#125;</span><br><span class="line">a.clear()</span><br><span class="line">a</span><br><span class="line">&#123;&#125;</span><br><span class="line">`</span><br><span class="line"><span class="comment">######`fromkeys()` 用于生成字典，fromkeys来源于可迭代的对象比如元组或者list</span></span><br><span class="line">dict.fromkeys(seq,value)，value是可选的，也就说把可迭代对象里面的元素拿出来当字典的key，vlaue是可选的如果没有value那所有的key就是<span class="keyword">None</span></span><br><span class="line">```python</span><br><span class="line">a  = (<span class="string">'name'</span>,<span class="string">'age'</span>)</span><br><span class="line">b = dict.fromkeys(a,<span class="string">'something'</span>)</span><br><span class="line">b</span><br><span class="line">&#123;<span class="string">'age'</span>: <span class="string">'something'</span>, <span class="string">'name'</span>: <span class="string">'something'</span>&#125;</span><br></pre></td></tr></table></figure></p>
-<p>######<code>clear()</code> 清楚字典数据 like list clear<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a  = &#123;<span class="string">"name"</span>:<span class="number">1</span>&#125;</span><br><span class="line">a.clear()</span><br><span class="line">a</span><br><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>######<code>clear()</code> 清楚字典数据 like list clear<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a  = &#123;<span class="string">"name"</span>:<span class="number">1</span>&#125;</span><br><span class="line">a.clear()</span><br><span class="line">a</span><br><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>####最后一下python2和python3 字典方法的区别<br><img src="http://img.yseal.cn/python_dict.png" alt=""></p>
-
+              <p>title: Python中的字典<br>comments: true<br>original: false<br>date: 2016-01-25 17:08:56<br>tags: </p>
+<ul>
+<li>python</li>
+<li>python-dict<br>categories: python</li>
+</ul>
+<hr>
+<h4 id="Python__u5B57_u5178_dict"><a href="#Python__u5B57_u5178_dict" class="headerlink" title="Python 字典 dict"></a>Python 字典 dict</h4><p>python字典是序列化数据非常方便,就像最简单的关系型数据库,可以和list互相嵌套<br>a = {key:value} 建议还是使用双引号来包裹字符串，这样子以后转存为字符串后再次序列号时方便<br>dict 有几个关键字: “无序的,可变对象,key唯一,可嵌套”<br>
+          
       
     </div>
     
     <div class="article-info article-info-index">
       
       
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/python/">python</a>
-    </div>
-
 
       
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python-dict/">python-dict</a></li></ul>
-    </div>
-
+      
+        <p class="article-more-link">
+          <a  href="/2016/01/26/python-dict-desc/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
