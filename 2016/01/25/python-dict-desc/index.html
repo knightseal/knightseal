@@ -5,20 +5,23 @@
   
   <title>Python中的字典 | Seal Tips</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="####Python 字典 dict 
-####最后一下python2和python3 字典方法的区别">
+  <meta name="description" content="####Python 字典 dictpython字典是序列化数据非常方便,就像最简单的关系型数据库,可以和list互相嵌套a = {key:value} 建议还是使用双引号来包裹字符串，这样子以后转存为字符串后再次序列号时方便dict 有几个关键字: “无序的,可变对象,key唯一,可嵌套”
+####dict func
+######clear() 清楚字典数据 like list clear123">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python中的字典">
 <meta property="og:url" content="http://knightseal.github.io/2016/01/25/python-dict-desc/index.html">
 <meta property="og:site_name" content="Seal Tips">
-<meta property="og:description" content="####Python 字典 dict 
-####最后一下python2和python3 字典方法的区别">
+<meta property="og:description" content="####Python 字典 dictpython字典是序列化数据非常方便,就像最简单的关系型数据库,可以和list互相嵌套a = {key:value} 建议还是使用双引号来包裹字符串，这样子以后转存为字符串后再次序列号时方便dict 有几个关键字: “无序的,可变对象,key唯一,可嵌套”
+####dict func
+######clear() 清楚字典数据 like list clear123">
 <meta property="og:image" content="http://img.yseal.cn/python_dict.png">
-<meta property="og:updated_time" content="2016-01-25T09:13:14.000Z">
+<meta property="og:updated_time" content="2016-01-26T02:17:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python中的字典">
-<meta name="twitter:description" content="####Python 字典 dict 
-####最后一下python2和python3 字典方法的区别">
+<meta name="twitter:description" content="####Python 字典 dictpython字典是序列化数据非常方便,就像最简单的关系型数据库,可以和list互相嵌套a = {key:value} 建议还是使用双引号来包裹字符串，这样子以后转存为字符串后再次序列号时方便dict 有几个关键字: “无序的,可变对象,key唯一,可嵌套”
+####dict func
+######clear() 清楚字典数据 like list clear123">
   
     <link rel="alternative" href="/atom.xml" title="Seal Tips" type="application/atom+xml">
   
@@ -268,7 +271,11 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>####Python 字典 dict </p>
+        <p>####Python 字典 dict<br>python字典是序列化数据非常方便,就像最简单的关系型数据库,可以和list互相嵌套<br>a = {key:value} 建议还是使用双引号来包裹字符串，这样子以后转存为字符串后再次序列号时方便<br>dict 有几个关键字: “无序的,可变对象,key唯一,可嵌套”</p>
+<p>####dict func</p>
+<p>######<code>clear()</code> 清楚字典数据 like list clear<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">a  = &#123;<span class="string">"name"</span>:<span class="number">1</span>&#125;</span><br><span class="line">a.clear()</span><br><span class="line">a</span><br><span class="line">&#123;&#125;</span><br><span class="line">`</span><br><span class="line"><span class="comment">######`fromkeys()` 用于生成字典，fromkeys来源于可迭代的对象比如元组或者list</span></span><br><span class="line">dict.fromkeys(seq,value)，value是可选的，也就说把可迭代对象里面的元素拿出来当字典的key，vlaue是可选的如果没有value那所有的key就是<span class="keyword">None</span></span><br><span class="line">```python</span><br><span class="line">a  = (<span class="string">'name'</span>,<span class="string">'age'</span>)</span><br><span class="line">b = dict.fromkeys(a,<span class="string">'something'</span>)</span><br><span class="line">b</span><br><span class="line">&#123;<span class="string">'age'</span>: <span class="string">'something'</span>, <span class="string">'name'</span>: <span class="string">'something'</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<p>######<code>clear()</code> 清楚字典数据 like list clear<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a  = &#123;<span class="string">"name"</span>:<span class="number">1</span>&#125;</span><br><span class="line">a.clear()</span><br><span class="line">a</span><br><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>######<code>clear()</code> 清楚字典数据 like list clear<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a  = &#123;<span class="string">"name"</span>:<span class="number">1</span>&#125;</span><br><span class="line">a.clear()</span><br><span class="line">a</span><br><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure></p>
 <p>####最后一下python2和python3 字典方法的区别<br><img src="http://img.yseal.cn/python_dict.png" alt=""></p>
 
       
