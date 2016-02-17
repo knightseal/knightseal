@@ -3,19 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>python中的变量和引用 | Seal Tips</title>
+  <title>centos7 Tips | Seal Tips</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="变量和引用python中变量没有类型，只有对象才有类型，a=3 我们说a是一个int其实正确的说法是 a引用了一个int类型的对象值是3如果都这么说 尼玛好累啊，所以在平时我们以为变量是有类型的，内存里面的数据我们要访问，我们肯定要解决咋么拿，总要有个地方代表我要拿什么,有东西来代表内存里面的数据,就好比我们windows系统里面的快捷方式,我们在桌面一个快捷方式指向了一个具体的文件夹,一个执行文">
+  <meta name="description" content="Centos7修改网卡名称（eth0）在centos7中网卡名称是随机的一串非常的不友好，被称为”预测命名规则“，但我们还是希望eth0或者em1的 可以参考下面的方法
+
+vim /etc/sysconfig/network-scripts/ifcfg-enxxxxx 网卡配置文件，然后吧其中的name 和device 都改成eth0
+mv /etc/sysconfig/network-scrip">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python中的变量和引用">
-<meta property="og:url" content="http://knightseal.github.io/2016/01/21/python-var/index.html">
+<meta property="og:title" content="centos7 Tips">
+<meta property="og:url" content="http://knightseal.github.io/2016/02/17/centos7/index.html">
 <meta property="og:site_name" content="Seal Tips">
-<meta property="og:description" content="变量和引用python中变量没有类型，只有对象才有类型，a=3 我们说a是一个int其实正确的说法是 a引用了一个int类型的对象值是3如果都这么说 尼玛好累啊，所以在平时我们以为变量是有类型的，内存里面的数据我们要访问，我们肯定要解决咋么拿，总要有个地方代表我要拿什么,有东西来代表内存里面的数据,就好比我们windows系统里面的快捷方式,我们在桌面一个快捷方式指向了一个具体的文件夹,一个执行文">
-<meta property="og:image" content="http://img.yseal.cn/pythonvar.png-1">
-<meta property="og:updated_time" content="2016-01-21T09:18:41.000Z">
+<meta property="og:description" content="Centos7修改网卡名称（eth0）在centos7中网卡名称是随机的一串非常的不友好，被称为”预测命名规则“，但我们还是希望eth0或者em1的 可以参考下面的方法
+
+vim /etc/sysconfig/network-scripts/ifcfg-enxxxxx 网卡配置文件，然后吧其中的name 和device 都改成eth0
+mv /etc/sysconfig/network-scrip">
+<meta property="og:updated_time" content="2016-02-17T01:14:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python中的变量和引用">
-<meta name="twitter:description" content="变量和引用python中变量没有类型，只有对象才有类型，a=3 我们说a是一个int其实正确的说法是 a引用了一个int类型的对象值是3如果都这么说 尼玛好累啊，所以在平时我们以为变量是有类型的，内存里面的数据我们要访问，我们肯定要解决咋么拿，总要有个地方代表我要拿什么,有东西来代表内存里面的数据,就好比我们windows系统里面的快捷方式,我们在桌面一个快捷方式指向了一个具体的文件夹,一个执行文">
+<meta name="twitter:title" content="centos7 Tips">
+<meta name="twitter:description" content="Centos7修改网卡名称（eth0）在centos7中网卡名称是随机的一串非常的不友好，被称为”预测命名规则“，但我们还是希望eth0或者em1的 可以参考下面的方法
+
+vim /etc/sysconfig/network-scripts/ifcfg-enxxxxx 网卡配置文件，然后吧其中的name 和device 都改成eth0
+mv /etc/sysconfig/network-scrip">
   
     <link rel="alternative" href="/atom.xml" title="Seal Tips" type="application/atom+xml">
   
@@ -223,11 +231,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-python-var" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-centos7" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/01/21/python-var/" class="article-date">
-      <time datetime="2016-01-21T07:58:43.000Z" itemprop="datePublished">2016-01-21</time>
+      <a href="/2016/02/17/centos7/" class="article-date">
+      <time datetime="2016-02-17T01:08:08.000Z" itemprop="datePublished">2016-02-17</time>
 </a>
     </div>
   
@@ -240,7 +248,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      python中的变量和引用
+      centos7 Tips
     </h1>
   
 
@@ -249,13 +257,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/python/">python</a>
+    <a class="article-category-link" href="/categories/linux/">linux</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos7/">centos7</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -265,9 +273,14 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h4 id="u53D8_u91CF_u548C_u5F15_u7528"><a href="#u53D8_u91CF_u548C_u5F15_u7528" class="headerlink" title="变量和引用"></a>变量和引用</h4><p>python中变量没有类型，只有对象才有类型，a=3 我们说a是一个int其实正确的说法是 a引用了一个int类型的对象值是3<br>如果都这么说 尼玛好累啊，所以在平时我们以为变量是有类型的，内存里面的数据我们要访问，我们肯定要解决咋么拿，总要有个地方代表我要拿什么,有东西来代表内存里面的数据,就好比我们windows系统里面的快捷方式,我们在桌面一个快捷方式指向了一个具体的文件夹,一个执行文件,一个网址等等可以把变量理解为一个标识,一个快捷方式,如下面草图:<br><a id="more"></a><br><img src="http://img.yseal.cn/pythonvar.png-1" alt=""></p>
-<h4 id="u4E00_u63A2_u7A76_u7ADF"><a href="#u4E00_u63A2_u7A76_u7ADF" class="headerlink" title="一探究竟"></a>一探究竟</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">a = <span class="number">9</span>                     <span class="comment"># a引用了9这个对象</span></span><br><span class="line">sys.getrefcount(a)        <span class="comment"># 打印a引用的对象的引用计数</span></span><br><span class="line"><span class="number">18</span>                        <span class="comment"># 输出18次</span></span><br><span class="line">b =a                      <span class="comment"># b 引用了a引用的对象</span></span><br><span class="line">id(a)                     <span class="comment"># 打印a和b引用对象的内存地址是相同的</span></span><br><span class="line"><span class="number">140318064267944</span></span><br><span class="line">id(b)</span><br><span class="line"><span class="number">140318064267944</span></span><br><span class="line">sys.getrefcount(a)        <span class="comment"># 再次打印a引用的对象计数</span></span><br><span class="line"><span class="number">19</span>                        <span class="comment"># 输出19次,因为b也引用了一次</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#下面我们让a引用其他的对象</span></span><br><span class="line">a = <span class="number">10</span></span><br><span class="line">sys.getrefcount(a)        <span class="comment"># 打印a引用的对象的引用计数</span></span><br><span class="line"><span class="number">28</span>                        <span class="comment"># 输出的不是9这个对象的引用而是10这个对象的引用计数</span></span><br><span class="line">sys.getrefcount(b)        <span class="comment"># 打印b引用的对象的引用计数</span></span><br><span class="line"><span class="number">18</span>                        <span class="comment"># 输出的是9这个对象的引用，由于a不再引用了9这个对象，所以引用计数就-1</span></span><br></pre></td></tr></table></figure>
-<p>当一个对象在内存里面的引用计数为0,也就是说没有变量引用对象了，这个对象就会被销毁，内存就回收了这部分空间</p>
+        <h4 id="Centos7_u4FEE_u6539_u7F51_u5361_u540D_u79F0_uFF08eth0_uFF09"><a href="#Centos7_u4FEE_u6539_u7F51_u5361_u540D_u79F0_uFF08eth0_uFF09" class="headerlink" title="Centos7修改网卡名称（eth0）"></a>Centos7修改网卡名称（eth0）</h4><p>在centos7中网卡名称是随机的一串非常的不友好，被称为”预测命名规则“，但我们还是希望eth0或者em1的 可以参考下面的方法</p>
+<ol>
+<li>vim /etc/sysconfig/network-scripts/ifcfg-enxxxxx 网卡配置文件，然后吧其中的name 和device 都改成eth0</li>
+<li>mv /etc/sysconfig/network-scripts/ifcfg-enxxxxx /etc/sysconfig/network-scripts/ifcfg-eth0</li>
+<li>编辑/etc/default/grub 找到GRUBCMDLINELINUX在最后追加 net.ifnames=0 biosdevname=0</li>
+<li>使用grub2-mkconfig -o /boot/grub2/grub.cfg 重新编辑grub配置文件和更新内核参数，重启生效</li>
+<li>最好还是安装一下net-tools yum -y install net-tools 否则ifconfig 都没有 </li>
+</ol>
 
       
     </div>
@@ -279,16 +292,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/01/25/python-dict/">
-                    Python中的字典和json的比较和eval内置方法
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/01/21/hexo-qa/">
-                    hexo点滴
+                <a href="/2016/02/11/iterator/">
+                    python迭代器
                 </a>
             </div>
         
@@ -299,7 +306,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#u53D8_u91CF_u548C_u5F15_u7528"><span class="toc-number">1.</span> <span class="toc-text">变量和引用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u4E00_u63A2_u7A76_u7ADF"><span class="toc-number">2.</span> <span class="toc-text">一探究竟</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Centos7_u4FEE_u6539_u7F51_u5361_u540D_u79F0_uFF08eth0_uFF09"><span class="toc-number">1.</span> <span class="toc-text">Centos7修改网卡名称（eth0）</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -363,7 +370,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/01/21/python-var/" data-title="python中的变量和引用" data-url="http://knightseal.github.io/2016/01/21/python-var/"></div>
+    <div class="ds-thread" data-thread-key="2016/02/17/centos7/" data-title="centos7 Tips" data-url="http://knightseal.github.io/2016/02/17/centos7/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -387,15 +394,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/01/25/python-dict/" title="上一篇: Python中的字典和json的比较和eval内置方法">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/01/21/hexo-qa/" title="下一篇: hexo点滴">
+            <a href="/2016/02/11/iterator/" title="下一篇: python迭代器">
                 <i class="fa fa-angle-right"></i>
             </a>
         

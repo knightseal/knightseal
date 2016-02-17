@@ -146,7 +146,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/iterator/" style="font-size: 10px;">iterator</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/python-dict/" style="font-size: 10px;">python-dict</a> <a href="/tags/python-json/" style="font-size: 10px;">python-json</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+                        <a href="/tags/centos7/" style="font-size: 10px;">centos7</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/iterator/" style="font-size: 10px;">iterator</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/python-dict/" style="font-size: 10px;">python-dict</a> <a href="/tags/python-json/" style="font-size: 10px;">python-json</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
                     </div>
                 </section>
                 
@@ -225,6 +225,74 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-centos7" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/17/centos7/" class="article-date">
+      <time datetime="2016-02-17T01:08:08.000Z" itemprop="datePublished">2016-02-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/17/centos7/">centos7 Tips</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h4 id="Centos7_u4FEE_u6539_u7F51_u5361_u540D_u79F0_uFF08eth0_uFF09"><a href="#Centos7_u4FEE_u6539_u7F51_u5361_u540D_u79F0_uFF08eth0_uFF09" class="headerlink" title="Centos7修改网卡名称（eth0）"></a>Centos7修改网卡名称（eth0）</h4><p>在centos7中网卡名称是随机的一串非常的不友好，被称为”预测命名规则“，但我们还是希望eth0或者em1的 可以参考下面的方法</p>
+<ol>
+<li>vim /etc/sysconfig/network-scripts/ifcfg-enxxxxx 网卡配置文件，然后吧其中的name 和device 都改成eth0</li>
+<li>mv /etc/sysconfig/network-scripts/ifcfg-enxxxxx /etc/sysconfig/network-scripts/ifcfg-eth0</li>
+<li>编辑/etc/default/grub 找到GRUBCMDLINELINUX在最后追加 net.ifnames=0 biosdevname=0</li>
+<li>使用grub2-mkconfig -o /boot/grub2/grub.cfg 重新编辑grub配置文件和更新内核参数，重启生效</li>
+<li>最好还是安装一下net-tools yum -y install net-tools 否则ifconfig 都没有 </li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos7/">centos7</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
   
     <article id="post-iterator" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -789,72 +857,6 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
     </div>
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-python-version" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/19/python-version/" class="article-date">
-      <time datetime="2016-01-19T06:26:24.000Z" itemprop="datePublished">2016-01-19</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/19/python-version/">python2和3的区别汇总</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h4 id="print_u51FD_u6570"><a href="#print_u51FD_u6570" class="headerlink" title="print函数"></a>print函数</h4><p>这个是肯定需要说明的，当我知道python2和3的区别第一个知识点可能就是print</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># python2 我们这样使用</span></span><br><span class="line"><span class="keyword">print</span> <span class="number">123</span></span><br><span class="line"><span class="keyword">print</span> a,b,c</span><br><span class="line"><span class="keyword">print</span> &gt;&gt;sys.stderr,something <span class="comment"># python2 &gt;&gt;pipe_name语法，把输出重定向到一个管道，比如sys.stderr</span></span><br><span class="line"><span class="comment"># pyhton3 我们这样使用</span></span><br><span class="line">print(<span class="number">123</span>)</span><br><span class="line">print(a,b,c)</span><br><span class="line">print(something,file=sys.stderr) <span class="comment">#python 管道作为关键字参数file的值传递给print()来完成同样的功能</span></span><br><span class="line">print(a,b,c,end = <span class="string">'\n'</span>) <span class="comment">#python 这是在python3 里面采用的 end 可以从字面意思理解为“结尾符” 默认肯定是'\n'</span></span><br></pre></td></tr></table></figure>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/python/">python</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/01/19/python-version/#more">more >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
