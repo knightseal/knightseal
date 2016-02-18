@@ -259,9 +259,7 @@
           
         <h4 id="Centos__u5206_u533A_u5927_u4E8E2T_u7684_u65B9_u6CD5"><a href="#Centos__u5206_u533A_u5927_u4E8E2T_u7684_u65B9_u6CD5" class="headerlink" title="Centos 分区大于2T的方法"></a>Centos 分区大于2T的方法</h4><p>大于2TB需要使用GPT工具进行分区<br>命令式parted 如果没有这个命令 可以使用yum 进行安装<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install parted</span><br></pre></td></tr></table></figure></p>
 <p>写成脚本</p>
-<p>```<br>parted -s /dev/sd$i mklabel gpt<br>parted -s /dev/sd$i mkpart primary ext4 0% 100%  #用这种方式可以解决4K对齐的问题<br>parted -s /dev/sd$i print<br>mkfs.ext4 -T largefile /dev/sd”$i”1              # -T largefile 参数可以快速操作，否则等很久</p>
-<p>#mkfs.ext4 /dev/sd”$i”1<br>···</p>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">parted <span class="operator">-s</span> /dev/sd<span class="variable">$i</span> mklabel gpt</span><br><span class="line">parted <span class="operator">-s</span> /dev/sd<span class="variable">$i</span> mkpart primary ext4 <span class="number">0</span>% <span class="number">100</span>%  <span class="comment">#用这种方式可以解决4K对齐的问题</span></span><br><span class="line">parted <span class="operator">-s</span> /dev/sd<span class="variable">$i</span> <span class="built_in">print</span></span><br><span class="line">mkfs.ext4 -T largefile /dev/sd<span class="string">"<span class="variable">$i</span>"</span><span class="number">1</span>              <span class="comment"># -T largefile 参数可以快速操作，否则等很久</span></span><br></pre></td></tr></table></figure>
       
     </div>
     
