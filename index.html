@@ -377,7 +377,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/11/iterator/">python迭代器</a>
+      <a class="article-title" href="/2016/02/11/iterator/">python迭代器,生成器</a>
     </h1>
   
 
@@ -387,7 +387,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>Todo</p>
+        <h5 id="u8FED_u4EE3_u5668Iterator"><a href="#u8FED_u4EE3_u5668Iterator" class="headerlink" title="迭代器Iterator"></a>迭代器Iterator</h5><p>迭代器是一种方法数组或者说集合的一种方式，也是一种对象,只有next方法,不能采用索引下标的方式方法,迭代一个集合数组不需要这个数据的所有元素都存在只有在用到的时候在存在即可<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lst = range(<span class="number">10</span>)</span><br><span class="line">print(type(lst))        <span class="comment"># 输出是 &lt;type 'list'&gt; 这是一个list</span></span><br><span class="line">new_lst = iter(lst)</span><br><span class="line">print(new_lst)          <span class="comment"># 输出是 &lt;listiterator object at 0x107b1e510&gt; 这个是迭代器的对象</span></span><br></pre></td></tr></table></figure></p>
 
       
     </div>
