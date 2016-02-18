@@ -3,27 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>hexo-404 | Seal Tips</title>
+  <title>centos6 分区大于2TB | Seal Tips</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Hexo 增加404页面
-配置hexo 的_config.yaml： permalink_defaults: /404.html
-在source 中新建一个404.html
-使用公益的404页面，用益云,（腾讯的没有返回首页按钮,）益云1234567891011layout: false---&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;&amp;lt;meta charset=&quot;UTF-8&quot; /&amp;gt">
+  <meta name="description" content="Centos 分区大于2T的方法大于2TB需要使用GPT工具进行分区命令式parted 如果没有这个命令 可以使用yum 进行安装1yum -y install parted
+写成脚本
+```parted -s /dev/sd$i mklabel gptparted -s /dev/sd$i mkpart primary ext4 0% 100%  #用这种方式可以解决4K对齐的问题parted">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo-404">
-<meta property="og:url" content="http://knightseal.github.io/2016/01/19/hexo-404/index.html">
+<meta property="og:title" content="centos6 分区大于2TB">
+<meta property="og:url" content="http://knightseal.github.io/2016/02/18/centos-mkfs/index.html">
 <meta property="og:site_name" content="Seal Tips">
-<meta property="og:description" content="Hexo 增加404页面
-配置hexo 的_config.yaml： permalink_defaults: /404.html
-在source 中新建一个404.html
-使用公益的404页面，用益云,（腾讯的没有返回首页按钮,）益云1234567891011layout: false---&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;&amp;lt;meta charset=&quot;UTF-8&quot; /&amp;gt">
-<meta property="og:updated_time" content="2016-01-19T08:58:55.000Z">
+<meta property="og:description" content="Centos 分区大于2T的方法大于2TB需要使用GPT工具进行分区命令式parted 如果没有这个命令 可以使用yum 进行安装1yum -y install parted
+写成脚本
+```parted -s /dev/sd$i mklabel gptparted -s /dev/sd$i mkpart primary ext4 0% 100%  #用这种方式可以解决4K对齐的问题parted">
+<meta property="og:updated_time" content="2016-02-18T07:30:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo-404">
-<meta name="twitter:description" content="Hexo 增加404页面
-配置hexo 的_config.yaml： permalink_defaults: /404.html
-在source 中新建一个404.html
-使用公益的404页面，用益云,（腾讯的没有返回首页按钮,）益云1234567891011layout: false---&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;&amp;lt;meta charset=&quot;UTF-8&quot; /&amp;gt">
+<meta name="twitter:title" content="centos6 分区大于2TB">
+<meta name="twitter:description" content="Centos 分区大于2T的方法大于2TB需要使用GPT工具进行分区命令式parted 如果没有这个命令 可以使用yum 进行安装1yum -y install parted
+写成脚本
+```parted -s /dev/sd$i mklabel gptparted -s /dev/sd$i mkpart primary ext4 0% 100%  #用这种方式可以解决4K对齐的问题parted">
   
     <link rel="alternative" href="/atom.xml" title="Seal Tips" type="application/atom+xml">
   
@@ -235,11 +232,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-hexo-404" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-centos-mkfs" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/01/19/hexo-404/" class="article-date">
-      <time datetime="2016-01-19T08:48:59.000Z" itemprop="datePublished">2016-01-19</time>
+      <a href="/2016/02/18/centos-mkfs/" class="article-date">
+      <time datetime="2016-02-18T07:06:37.000Z" itemprop="datePublished">2016-02-18</time>
 </a>
     </div>
   
@@ -252,7 +249,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      hexo-404
+      centos6 分区大于2TB
     </h1>
   
 
@@ -261,13 +258,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/hexo/">hexo</a>
+    <a class="article-category-link" href="/categories/linux/">linux</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -277,11 +274,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h4 id="Hexo__u589E_u52A0404_u9875_u9762"><a href="#Hexo__u589E_u52A0404_u9875_u9762" class="headerlink" title="Hexo 增加404页面"></a>Hexo 增加404页面</h4><ol>
-<li>配置hexo 的_config.yaml： permalink_defaults: /404.html</li>
-<li>在source 中新建一个404.html</li>
-<li>使用公益的404页面，用益云,（腾讯的没有返回首页按钮,）<a href="http://yibo.iyiyun.com/Home/Index/web404" target="_blank" rel="external">益云</a><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">layout: false</span><br><span class="line">---</span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">title</span>&gt;</span>404<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">这里把益云生成的404 代码放进来，自己调整高度等等</span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-</ol>
+        <h4 id="Centos__u5206_u533A_u5927_u4E8E2T_u7684_u65B9_u6CD5"><a href="#Centos__u5206_u533A_u5927_u4E8E2T_u7684_u65B9_u6CD5" class="headerlink" title="Centos 分区大于2T的方法"></a>Centos 分区大于2T的方法</h4><p>大于2TB需要使用GPT工具进行分区<br>命令式parted 如果没有这个命令 可以使用yum 进行安装<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install parted</span><br></pre></td></tr></table></figure></p>
+<p>写成脚本</p>
+<p>```<br>parted -s /dev/sd$i mklabel gpt<br>parted -s /dev/sd$i mkpart primary ext4 0% 100%  #用这种方式可以解决4K对齐的问题<br>parted -s /dev/sd$i print<br>mkfs.ext4 -T largefile /dev/sd”$i”1              # -T largefile 参数可以快速操作，否则等很久</p>
+<p>#mkfs.ext4 /dev/sd”$i”1<br>···</p>
 
       
     </div>
@@ -293,16 +289,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/01/20/rebuild/">
-                    2016重新python
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/01/19/python-version/">
-                    python2和3的区别汇总
+                <a href="/2016/02/17/centos7/">
+                    centos7 Tips
                 </a>
             </div>
         
@@ -313,7 +303,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Hexo__u589E_u52A0404_u9875_u9762"><span class="toc-number">1.</span> <span class="toc-text">Hexo 增加404页面</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Centos__u5206_u533A_u5927_u4E8E2T_u7684_u65B9_u6CD5"><span class="toc-number">1.</span> <span class="toc-text">Centos 分区大于2T的方法</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -377,7 +367,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/01/19/hexo-404/" data-title="hexo-404" data-url="http://knightseal.github.io/2016/01/19/hexo-404/"></div>
+    <div class="ds-thread" data-thread-key="2016/02/18/centos-mkfs/" data-title="centos6 分区大于2TB" data-url="http://knightseal.github.io/2016/02/18/centos-mkfs/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -401,15 +391,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/01/20/rebuild/" title="上一篇: 2016重新python">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/01/19/python-version/" title="下一篇: python2和3的区别汇总">
+            <a href="/2016/02/17/centos7/" title="下一篇: centos7 Tips">
                 <i class="fa fa-angle-right"></i>
             </a>
         

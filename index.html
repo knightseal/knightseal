@@ -148,7 +148,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/centos7/" style="font-size: 10px;">centos7</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/iterator/" style="font-size: 10px;">iterator</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/python-dict/" style="font-size: 10px;">python-dict</a> <a href="/tags/python-json/" style="font-size: 10px;">python-json</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+                        <a href="/tags/centos7/" style="font-size: 10px;">centos7</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/iterator/" style="font-size: 10px;">iterator</a> <a href="/tags/linux/" style="font-size: 15px;">linux</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/python-dict/" style="font-size: 10px;">python-dict</a> <a href="/tags/python-json/" style="font-size: 10px;">python-json</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
                     </div>
                 </section>
                 
@@ -229,6 +229,70 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-centos-mkfs" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/18/centos-mkfs/" class="article-date">
+      <time datetime="2016-02-18T07:06:37.000Z" itemprop="datePublished">2016-02-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/18/centos-mkfs/">centos6 分区大于2TB</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h4 id="Centos__u5206_u533A_u5927_u4E8E2T_u7684_u65B9_u6CD5"><a href="#Centos__u5206_u533A_u5927_u4E8E2T_u7684_u65B9_u6CD5" class="headerlink" title="Centos 分区大于2T的方法"></a>Centos 分区大于2T的方法</h4><p>大于2TB需要使用GPT工具进行分区<br>命令式parted 如果没有这个命令 可以使用yum 进行安装<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install parted</span><br></pre></td></tr></table></figure></p>
+<p>写成脚本</p>
+<p>```<br>parted -s /dev/sd$i mklabel gpt<br>parted -s /dev/sd$i mkpart primary ext4 0% 100%  #用这种方式可以解决4K对齐的问题<br>parted -s /dev/sd$i print<br>mkfs.ext4 -T largefile /dev/sd”$i”1              # -T largefile 参数可以快速操作，否则等很久</p>
+<p>#mkfs.ext4 /dev/sd”$i”1<br>···</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
   
     <article id="post-centos7" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -794,71 +858,6 @@
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-hexo-404" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/19/hexo-404/" class="article-date">
-      <time datetime="2016-01-19T08:48:59.000Z" itemprop="datePublished">2016-01-19</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/19/hexo-404/">hexo-404</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h4 id="Hexo__u589E_u52A0404_u9875_u9762"><a href="#Hexo__u589E_u52A0404_u9875_u9762" class="headerlink" title="Hexo 增加404页面"></a>Hexo 增加404页面</h4><ol>
-<li>配置hexo 的_config.yaml： permalink_defaults: /404.html</li>
-<li>在source 中新建一个404.html</li>
-<li>使用公益的404页面，用益云,（腾讯的没有返回首页按钮,）<a href="http://yibo.iyiyun.com/Home/Index/web404" target="_blank" rel="external">益云</a><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">layout: false</span><br><span class="line">---</span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">title</span>&gt;</span>404<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">这里把益云生成的404 代码放进来，自己调整高度等等</span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/hexo/">hexo</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
     </div>
 
       
