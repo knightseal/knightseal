@@ -5,16 +5,16 @@
   
   <title>python迭代器,生成器 | Seal Tips</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="迭代器Iterator迭代器是一种方法数组或者说集合的一种方式，也是一种对象,只有next方法,不能采用索引下标的方式方法,迭代一个集合数组不需要这个数据的所有元素都存在只有在用到的时候在存在即可1234lst = range(10)print(type(lst))        # 输出是 &amp;lt;type &apos;list&apos;&amp;gt; 这是一个listnew_lst = iter(lst)print(">
+  <meta name="description" content="迭代器Iterator迭代器是一种方法数组或者说集合的一种方式，也是一种对象,只有next方法,不能采用索引下标的方式方法,迭代一个集合数组不需要这个数据的所有元素都存在只有在用到的时候在存在即可12345lst = range(10)print(type(lst))        # 输出是 &amp;lt;type &apos;list&apos;&amp;gt; 这是一个listnew_lst = iter(lst)print">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python迭代器,生成器">
 <meta property="og:url" content="http://knightseal.github.io/2016/02/11/iterator/index.html">
 <meta property="og:site_name" content="Seal Tips">
-<meta property="og:description" content="迭代器Iterator迭代器是一种方法数组或者说集合的一种方式，也是一种对象,只有next方法,不能采用索引下标的方式方法,迭代一个集合数组不需要这个数据的所有元素都存在只有在用到的时候在存在即可1234lst = range(10)print(type(lst))        # 输出是 &amp;lt;type &apos;list&apos;&amp;gt; 这是一个listnew_lst = iter(lst)print(">
-<meta property="og:updated_time" content="2016-02-18T08:54:12.000Z">
+<meta property="og:description" content="迭代器Iterator迭代器是一种方法数组或者说集合的一种方式，也是一种对象,只有next方法,不能采用索引下标的方式方法,迭代一个集合数组不需要这个数据的所有元素都存在只有在用到的时候在存在即可12345lst = range(10)print(type(lst))        # 输出是 &amp;lt;type &apos;list&apos;&amp;gt; 这是一个listnew_lst = iter(lst)print">
+<meta property="og:updated_time" content="2016-02-19T08:07:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python迭代器,生成器">
-<meta name="twitter:description" content="迭代器Iterator迭代器是一种方法数组或者说集合的一种方式，也是一种对象,只有next方法,不能采用索引下标的方式方法,迭代一个集合数组不需要这个数据的所有元素都存在只有在用到的时候在存在即可1234lst = range(10)print(type(lst))        # 输出是 &amp;lt;type &apos;list&apos;&amp;gt; 这是一个listnew_lst = iter(lst)print(">
+<meta name="twitter:description" content="迭代器Iterator迭代器是一种方法数组或者说集合的一种方式，也是一种对象,只有next方法,不能采用索引下标的方式方法,迭代一个集合数组不需要这个数据的所有元素都存在只有在用到的时候在存在即可12345lst = range(10)print(type(lst))        # 输出是 &amp;lt;type &apos;list&apos;&amp;gt; 这是一个listnew_lst = iter(lst)print">
   
     <link rel="alternative" href="/atom.xml" title="Seal Tips" type="application/atom+xml">
   
@@ -268,7 +268,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h5 id="u8FED_u4EE3_u5668Iterator"><a href="#u8FED_u4EE3_u5668Iterator" class="headerlink" title="迭代器Iterator"></a>迭代器Iterator</h5><p>迭代器是一种方法数组或者说集合的一种方式，也是一种对象,只有next方法,不能采用索引下标的方式方法,迭代一个集合数组不需要这个数据的所有元素都存在只有在用到的时候在存在即可<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lst = range(<span class="number">10</span>)</span><br><span class="line">print(type(lst))        <span class="comment"># 输出是 &lt;type 'list'&gt; 这是一个list</span></span><br><span class="line">new_lst = iter(lst)</span><br><span class="line">print(new_lst)          <span class="comment"># 输出是 &lt;listiterator object at 0x107b1e510&gt; 这个是迭代器的对象</span></span><br></pre></td></tr></table></figure></p>
+        <h5 id="u8FED_u4EE3_u5668Iterator"><a href="#u8FED_u4EE3_u5668Iterator" class="headerlink" title="迭代器Iterator"></a>迭代器Iterator</h5><p>迭代器是一种方法数组或者说集合的一种方式，也是一种对象,只有next方法,不能采用索引下标的方式方法,迭代一个集合数组不需要这个数据的所有元素都存在只有在用到的时候在存在即可<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">lst = range(<span class="number">10</span>)</span><br><span class="line">print(type(lst))        <span class="comment"># 输出是 &lt;type 'list'&gt; 这是一个list</span></span><br><span class="line">new_lst = iter(lst)</span><br><span class="line">print(new_lst)          <span class="comment"># 输出是 &lt;listiterator object at 0x107b1e510&gt; 这个是迭代器的对象</span></span><br><span class="line">new_lst.__next__()	    <span class="comment"># 迭代器使用next()方法返回迭代器的下个值如果下一个没有值，就会出现一个StopIteration的异常</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="u751F_u6210_u5668generator"><a href="#u751F_u6210_u5668generator" class="headerlink" title="生成器generator"></a>生成器generator</h5><p>把一个返回迭代器的函数称之为生成器,python的函数一般是使用return 进行返回值，如果采用yield 那么这个函数就不是普通的函数了 这个函数成为生成器<br>而这个函数返回的就是一个迭代器。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">	print(<span class="string">"Start"</span>)</span><br><span class="line">	<span class="keyword">yield</span> <span class="number">1</span></span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -300,7 +301,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#u8FED_u4EE3_u5668Iterator"><span class="toc-number">1.</span> <span class="toc-text">迭代器Iterator</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#u8FED_u4EE3_u5668Iterator"><span class="toc-number">1.</span> <span class="toc-text">迭代器Iterator</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u751F_u6210_u5668generator"><span class="toc-number">2.</span> <span class="toc-text">生成器generator</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
