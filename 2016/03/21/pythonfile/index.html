@@ -6,18 +6,18 @@
   <title>文件操作 | Seal Tips</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="####文件操作
-#####Open方法    返回的是一个文件的句柄，一个file对象    open(file, mode=’r’, buffering=None, encoding=None, errors=None, newline=None, closefd=True):    file: 代表文件的路径    mode: 是代表文件的操作模式 r w b + t 等等    buffe">
+#####Open方法返回的是一个文件的句柄，一个file对象open(file, mode=’r’, buffering=None, encoding=None, errors=None, newline=None, closefd=True):file: 代表文件的路径mode: 是代表文件的操作模式 r w b + t 等等buffering:0,1,&amp;gt;1三个,0代表">
 <meta property="og:type" content="article">
 <meta property="og:title" content="文件操作">
 <meta property="og:url" content="http://knightseal.github.io/2016/03/21/pythonfile/index.html">
 <meta property="og:site_name" content="Seal Tips">
 <meta property="og:description" content="####文件操作
-#####Open方法    返回的是一个文件的句柄，一个file对象    open(file, mode=’r’, buffering=None, encoding=None, errors=None, newline=None, closefd=True):    file: 代表文件的路径    mode: 是代表文件的操作模式 r w b + t 等等    buffe">
-<meta property="og:updated_time" content="2016-03-22T03:23:43.000Z">
+#####Open方法返回的是一个文件的句柄，一个file对象open(file, mode=’r’, buffering=None, encoding=None, errors=None, newline=None, closefd=True):file: 代表文件的路径mode: 是代表文件的操作模式 r w b + t 等等buffering:0,1,&amp;gt;1三个,0代表">
+<meta property="og:updated_time" content="2016-03-22T03:25:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="文件操作">
 <meta name="twitter:description" content="####文件操作
-#####Open方法    返回的是一个文件的句柄，一个file对象    open(file, mode=’r’, buffering=None, encoding=None, errors=None, newline=None, closefd=True):    file: 代表文件的路径    mode: 是代表文件的操作模式 r w b + t 等等    buffe">
+#####Open方法返回的是一个文件的句柄，一个file对象open(file, mode=’r’, buffering=None, encoding=None, errors=None, newline=None, closefd=True):file: 代表文件的路径mode: 是代表文件的操作模式 r w b + t 等等buffering:0,1,&amp;gt;1三个,0代表">
   
     <link rel="alternative" href="/atom.xml" title="Seal Tips" type="application/atom+xml">
   
@@ -272,7 +272,7 @@
       
           
         <p>####文件操作</p>
-<p>#####Open方法<br>    返回的是一个文件的句柄，一个file对象<br>    open(file, mode=’r’, buffering=None, encoding=None, errors=None, newline=None, closefd=True):<br>    file: 代表文件的路径<br>    mode: 是代表文件的操作模式 r w b + t 等等<br>    buffering:0,1,&gt;1三个,0代表buffer关闭（只适用于二进制模式）,1代表line buffer(只适用于文本模式),&gt;1表示初始化的buffer大小；<br>    encoding: 指定返回的数据采用何种编码<br>    errors: strict,ignore,当取strict的时候,字符编码出现问题的时候,会报错,当取ignore的时候,编码出现问题,程序会忽略而过,继续执行<br>    newline: 读取的时候-&gt;不指定newline默认开启Universal new line mode,其实就是相当于python2中rU模式，也就是文件无论是windows下的换行符”\r\n”还是linux下的”\n”都会被转换为”\n”<br>    写入的时候-&gt;不指定newline会根据当前系统的默认换行符进行写入<br>    closefd:默认是为True,参数中的file此时是传入文件的路径，如果设置成False那么只能接受fd<br><!--More--></p>
+<p>#####Open方法<br>返回的是一个文件的句柄，一个file对象<br>open(file, mode=’r’, buffering=None, encoding=None, errors=None, newline=None, closefd=True):<br>file: 代表文件的路径<br>mode: 是代表文件的操作模式 r w b + t 等等<br>buffering:0,1,&gt;1三个,0代表buffer关闭（只适用于二进制模式）,1代表line buffer(只适用于文本模式),&gt;1表示初始化的buffer大小；<br>encoding: 指定返回的数据采用何种编码<br>errors: strict,ignore,当取strict的时候,字符编码出现问题的时候,会报错,当取ignore的时候,编码出现问题,程序会忽略而过,继续执行<br>newline: 读取的时候-&gt;不指定newline默认开启Universal new line mode,其实就是相当于python2中rU模式，也就是文件无论是windows下的换行符”\r\n”还是linux下的”\n”都会被转换为”\n”<br>写入的时候-&gt;不指定newline会根据当前系统的默认换行符进行写入<br>closefd:默认是为True,参数中的file此时是传入文件的路径，如果设置成False那么只能接受fd<br><a id="more"></a></p>
 
       
     </div>
