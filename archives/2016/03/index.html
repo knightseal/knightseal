@@ -3,27 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>centos7 Tips | Seal Tips</title>
+  <title>Archives: 2016/3 | Seal Tips</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Centos7修改网卡名称（eth0）在centos7中网卡名称是随机的一串非常的不友好，被称为”预测命名规则“，但我们还是希望eth0或者em1的 可以参考下面的方法
-
-vim /etc/sysconfig/network-scripts/ifcfg-enxxxxx 网卡配置文件，然后吧其中的name 和device 都改成eth0
-mv /etc/sysconfig/network-scrip">
-<meta property="og:type" content="article">
-<meta property="og:title" content="centos7 Tips">
-<meta property="og:url" content="http://knightseal.github.io/2016/02/17/centos7/index.html">
+  <meta name="description" content="knightseal.github.io">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Seal Tips">
+<meta property="og:url" content="http://knightseal.github.io/archives/2016/03/index.html">
 <meta property="og:site_name" content="Seal Tips">
-<meta property="og:description" content="Centos7修改网卡名称（eth0）在centos7中网卡名称是随机的一串非常的不友好，被称为”预测命名规则“，但我们还是希望eth0或者em1的 可以参考下面的方法
-
-vim /etc/sysconfig/network-scripts/ifcfg-enxxxxx 网卡配置文件，然后吧其中的name 和device 都改成eth0
-mv /etc/sysconfig/network-scrip">
-<meta property="og:updated_time" content="2016-02-17T01:14:22.000Z">
+<meta property="og:description" content="knightseal.github.io">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="centos7 Tips">
-<meta name="twitter:description" content="Centos7修改网卡名称（eth0）在centos7中网卡名称是随机的一串非常的不友好，被称为”预测命名规则“，但我们还是希望eth0或者em1的 可以参考下面的方法
-
-vim /etc/sysconfig/network-scripts/ifcfg-enxxxxx 网卡配置文件，然后吧其中的name 和device 都改成eth0
-mv /etc/sysconfig/network-scrip">
+<meta name="twitter:title" content="Seal Tips">
+<meta name="twitter:description" content="knightseal.github.io">
   
     <link rel="alternative" href="/atom.xml" title="Seal Tips" type="application/atom+xml">
   
@@ -45,8 +35,8 @@ mv /etc/sysconfig/network-scrip">
           fancybox: true,
           animate: true,
           isHome: false,
-          isPost: true,
-          isArchive: false,
+          isPost: false,
+          isArchive: true,
           isTag: false,
           isCategory: false,
           open_in_new: false
@@ -235,217 +225,58 @@ mv /etc/sysconfig/network-scrip">
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-centos7" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap">
   
-    <div class="article-meta">
-      <a href="/2016/02/17/centos7/" class="article-date">
-      <time datetime="2016-02-17T01:08:08.000Z" itemprop="datePublished">2016-02-17</time>
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2016" class="archive-year">2016</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2016/03/21/pythonfile/" class="archive-article-date">
+      <time datetime="2016-03-21T05:43:53.000Z" itemprop="datePublished">03-21</time>
 </a>
-    </div>
+        </div>
+         
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      centos7 Tips
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2016/03/21/pythonfile/">文件操作</a>
     </h1>
   
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/linux/">linux</a>
-    </div>
-
-
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos7/">centos7</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
-    </div>
-
-        <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+        <div class="article-info info-on-archive">
           
-        <h4 id="Centos7_u4FEE_u6539_u7F51_u5361_u540D_u79F0_uFF08eth0_uFF09"><a href="#Centos7_u4FEE_u6539_u7F51_u5361_u540D_u79F0_uFF08eth0_uFF09" class="headerlink" title="Centos7修改网卡名称（eth0）"></a>Centos7修改网卡名称（eth0）</h4><p>在centos7中网卡名称是随机的一串非常的不友好，被称为”预测命名规则“，但我们还是希望eth0或者em1的 可以参考下面的方法</p>
-<ol>
-<li>vim /etc/sysconfig/network-scripts/ifcfg-enxxxxx 网卡配置文件，然后吧其中的name 和device 都改成eth0</li>
-<li>mv /etc/sysconfig/network-scripts/ifcfg-enxxxxx /etc/sysconfig/network-scripts/ifcfg-eth0</li>
-<li>编辑/etc/default/grub 找到GRUBCMDLINELINUX在最后追加 net.ifnames=0 biosdevname=0</li>
-<li>使用grub2-mkconfig -o /boot/grub2/grub.cfg 重新编辑grub配置文件和更新内核参数，重启生效</li>
-<li>最好还是安装一下net-tools yum -y install net-tools 否则ifconfig 都没有 </li>
-</ol>
-
-      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/python/">python</a>
     </div>
-    
+
+
+          
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+    </div>
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
-  
-    
-
-
-    <nav id="article-nav">
-        
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/02/18/centos-mkfs/">
-                    centos6 分区大于2TB
-                </a>
-            </div>
-        
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/02/11/iterator/">
-                    python迭代器,生成器
-                </a>
-            </div>
-        
-    </nav>
-
-  
 </article>
-
-    <div id="toc" class="toc-article">
-    <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Centos7_u4FEE_u6539_u7F51_u5361_u540D_u79F0_uFF08eth0_uFF09"><span class="toc-number">1.</span> <span class="toc-text">Centos7修改网卡名称（eth0）</span></a></li></ol>
-</div>
-<style>
-    .left-col .switch-btn {
-        display: none;
-    }
-    .left-col .switch-area {
-        display: none;
-    }
-</style>
-
-<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
-<script>
-    var valueHide = "隐藏目录";
-    var valueShow = "显示目录";
-
-    if ($(".left-col").is(":hidden")) {
-        $("#tocButton").attr("value", valueShow);
-    }
-
-    $("#tocButton").click(function() {
-        if ($("#toc").is(":hidden")) {
-            $("#tocButton").attr("value", valueHide);
-            $("#toc").slideDown(320);
-            $(".switch-btn, .switch-area").fadeOut(300);
-        }
-        else {
-            $("#tocButton").attr("value", valueShow);
-            $("#toc").slideUp(350);
-            $(".switch-btn, .switch-area").fadeIn(500);
-        }
-    })
-
-    if ($(".toc").length < 1) {
-        $("#toc, #tocButton").hide();
-        $(".switch-btn, .switch-area").show();
-    }
-</script>
-
-
-
-
-<div class="share">
-    <div class="bdsharebuttonbox">
-    <a href="#" class="bds_more" data-cmd="more"></a>
-    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
-    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
-    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
-    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
-    </div>
-    <script>
-        window._bd_share_config={
-            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-    </script>
-</div>
-
-
-
-    
-      <div class="duoshuo" id="comments">
-    <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/02/17/centos7/" data-title="centos7 Tips" data-url="http://knightseal.github.io/2016/02/17/centos7/"></div>
-    <!-- 多说评论框 end -->
-    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-    <script type="text/javascript">
-    var duoshuoQuery = {short_name:"knightseal"};
-    (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0] 
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-    </script>
-    <!-- 多说公共JS代码 end -->
-</div>
+  
+  
+    </div></section>
+  
 
     
 
-
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/2016/02/18/centos-mkfs/" title="上一篇: centos6 分区大于2TB">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-
-        
-            <a href="/2016/02/11/iterator/" title="下一篇: python迭代器,生成器">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
-    </div>
-
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/21/pythonfile/">文件操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/18/centos-mkfs/">centos6 分区大于2TB</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/17/centos7/">centos7 Tips</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/11/iterator/">python迭代器,生成器</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/03/python-func/">python中的函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/26/python-info-dict/">python字典</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/25/python-dict/">Python中的字典和json的比较和eval内置方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/21/python-var/">python中的变量和引用</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/21/hexo-qa/">hexo点滴</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/20/python-list-tuple/">python中的列表和元组</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/20/rebuild/">2016重新python</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/hexo-404/">hexo-404</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/python-version/">python2和3的区别汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/hello-world/">Hello World</a></li></ul>
-    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-    <script>
-        $(".post-list").addClass("toc-article");
-        $(".post-list-item a").attr("target","_blank");
-        $("#post-nav-button > a:nth-child(2)").click(function() {
-            $(".fa-bars, .fa-times").toggle();
-            $(".post-list").toggle(300);
-            if ($(".toc").length > 0) {
-                $("#toc, #tocButton").toggle(200, function() {
-                    if ($(".switch-area").is(":visible")) {
-                        $("#toc, .switch-btn, .switch-area").toggle();
-                        $("#tocButton").attr("value", valueHide);
-                        }
-                    })
-            }
-            else {
-                $(".switch-btn, .switch-area").fadeToggle(300);
-            }
-        })
-    </script>
-
-
-
-
-    <script>
-        
-    </script>
 </div>
       <footer id="footer">
     <div class="outer">
@@ -516,6 +347,17 @@ mv /etc/sysconfig/network-scrip">
         };
     })
 </script>
+
+    <button class="hide-labels">TAG 开关</button>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js">
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("button").click(function() {
+                $(".article-info").toggle(200);
+            });
+        });
+    </script>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
