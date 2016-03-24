@@ -230,6 +230,69 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-class-jicheng" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/24/class-jicheng/" class="article-date">
+      <time datetime="2016-03-24T06:43:46.000Z" itemprop="datePublished">2016-03-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/24/class-jicheng/">python类继承</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h5 id="python_u4E2D_u7684_u7C7B_u7EE7_u627F"><a href="#python_u4E2D_u7684_u7C7B_u7EE7_u627F" class="headerlink" title="python中的类继承"></a>python中的类继承</h5><p>当我们遇到有些情况是这样子的，有些对象既有相同的属性，又有不同的属性，这个时候没必要去吧在每个对象中把所有的属性都实现一边<br>而是说，先定义一个父类，然后子类继承父类的方法属性，如果有些属性特殊，可以重写，在python中经典类和新式类继承是不一样的<br>现在一般用新式类的继承方法也就是super(),super其实也是类，源码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">super</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="string">"""</span><br><span class="line">    super() -&gt; same as super(__class__, &lt;first argument&gt;)</span><br><span class="line">    super(type) -&gt; unbound super object</span><br><span class="line">    super(type, obj) -&gt; bound super object; requires isinstance(obj, type)</span><br><span class="line">    super(type, type2) -&gt; bound super object; requires issubclass(type2, type)</span><br><span class="line">    Typical use to call a cooperative superclass method:</span><br><span class="line">    class C(B):</span><br><span class="line">        def meth(self, arg):</span><br><span class="line">            super().meth(arg)</span><br><span class="line">    This works for class methods too:</span><br><span class="line">    class C(B):</span><br><span class="line">        @classmethod</span><br><span class="line">        def cmeth(cls, arg):</span><br><span class="line">            super().cmeth(arg)</span><br><span class="line">    """</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getattribute__</span><span class="params">(self, name)</span>:</span> <span class="comment"># real signature unknown; restored from __doc__</span></span><br><span class="line">        <span class="string">""" x.__getattribute__('name') &lt;==&gt; x.name """</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__get__</span><span class="params">(self, obj, type=None)</span>:</span> <span class="comment"># real signature unknown; restored from __doc__</span></span><br><span class="line">        <span class="string">""" descr.__get__(obj[, type]) -&gt; value """</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, type1=None, type2=None)</span>:</span> <span class="comment"># known special case of super.__init__</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        super() -&gt; same as super(__class__, &lt;first argument&gt;)</span><br><span class="line">        super(type) -&gt; unbound super object</span><br><span class="line">        super(type, obj) -&gt; bound super object; requires isinstance(obj, type)</span><br><span class="line">        super(type, type2) -&gt; bound super object; requires issubclass(type2, type)</span><br><span class="line">        Typical use to call a cooperative superclass method:</span><br><span class="line">        class C(B):</span><br><span class="line">            def meth(self, arg):</span><br><span class="line">                super().meth(arg)</span><br><span class="line">        This works for class methods too:</span><br><span class="line">        class C(B):</span><br><span class="line">            @classmethod</span><br><span class="line">            def cmeth(cls, arg):</span><br><span class="line">                super().cmeth(arg)</span><br><span class="line">        </span><br><span class="line">        # (copied from class doc)</span><br><span class="line">        """</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="decorator">    @staticmethod # known case of __new__</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(S, *more)</span>:</span> <span class="comment"># real signature unknown; restored from __doc__</span></span><br><span class="line">        <span class="string">""" T.__new__(S, ...) -&gt; a new object with type S, a subtype of T """</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__repr__</span><span class="params">(self)</span>:</span> <span class="comment"># real signature unknown; restored from __doc__</span></span><br><span class="line">        <span class="string">""" x.__repr__() &lt;==&gt; repr(x) """</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    __self_class__ = property(<span class="keyword">lambda</span> self: type(object))</span><br><span class="line">    <span class="string">"""the type of the instance invoking super(); may be None</span><br><span class="line"></span><br><span class="line">    :type: type</span><br><span class="line">    """</span></span><br><span class="line"></span><br><span class="line">    __self__ = property(<span class="keyword">lambda</span> self: type(object))</span><br><span class="line">    <span class="string">"""the instance invoking super(); may be None</span><br><span class="line"></span><br><span class="line">    :type: type</span><br><span class="line">    """</span></span><br><span class="line"></span><br><span class="line">    __thisclass__ = property(<span class="keyword">lambda</span> self: type(object))</span><br><span class="line">    <span class="string">"""the class invoking super()</span><br><span class="line"></span><br><span class="line">    :type: type</span><br><span class="line">    """</span></span><br></pre></td></tr></table></figure></p>
+<p>下面看一个例子：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Food</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="string">"""</span><br><span class="line">    定义一个食物的父类</span><br><span class="line">    """</span></span><br><span class="line">    food_number = <span class="number">0</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name,price)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        构造函数</span><br><span class="line">        :param name:  食物名称</span><br><span class="line">        :param price: 食物价格</span><br><span class="line">        :return:</span><br><span class="line">        """</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.price = price</span><br><span class="line">        self.enroll()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">enroll</span><span class="params">(self)</span>:</span></span><br><span class="line">        Food.food_number +=<span class="number">1</span></span><br><span class="line">        print(<span class="string">"第[%s]个食物: [%s] 入库了!"</span> % (self.food_number,self.name))</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">meat</span><span class="params">(Food)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name,price,from_who)</span>:</span></span><br><span class="line">        super(meat,self).__init__(name,price) <span class="comment"># 新式类的写法，继承父类的name和price </span></span><br><span class="line">        self.from_who = from_who</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">tell_from</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        肉来自哪里</span><br><span class="line">        :return:</span><br><span class="line">        """</span></span><br><span class="line">        print(<span class="string">"我是[%s],来自[%s]!"</span> % (self.name,self.from_who))</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">fruit</span><span class="params">(Food)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name,price,taste)</span>:</span></span><br><span class="line">        Food.__init__(self,name,price) <span class="comment">#经典类的写法 继承Food的name,price</span></span><br><span class="line">        self.taste = taste</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">tell_taste</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"我是水果:[%s],我是[%s]的"</span>% (self.name,self.taste))</span><br><span class="line">        </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span> :</span><br><span class="line">    beaf = meat(<span class="string">"牛肉"</span>,<span class="string">"100元"</span>,<span class="string">"公牛"</span>)</span><br><span class="line">    apple = fruit(<span class="string">"苹果"</span>,<span class="string">"10元"</span>,<span class="string">"甜"</span>)</span><br><span class="line">    beaf.tell_from()</span><br><span class="line">    apple.tell_taste()</span><br><span class="line">    print(Food.food_number)</span><br></pre></td></tr></table></figure></p>
+<p>输出:<br><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">第<span class="string">[1]</span>个食物: <span class="string">[牛肉]</span> 入库了!</span><br><span class="line">第<span class="string">[2]</span>个食物: <span class="string">[苹果]</span> 入库了!</span><br><span class="line">我是<span class="string">[牛肉]</span>,来自<span class="string">[公牛]</span>!</span><br><span class="line">我是水果:<span class="string">[苹果]</span>,我是<span class="string">[甜]</span>的</span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/python/">python</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-paramikotest" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -806,68 +869,6 @@
         <p class="article-more-link">
           <a  href="/2016/01/21/python-var/#more">more >></a>
         </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-hexo-qa" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/21/hexo-qa/" class="article-date">
-      <time datetime="2016-01-21T01:05:02.000Z" itemprop="datePublished">2016-01-21</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/21/hexo-qa/">hexo点滴</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h4 id="u5B89_u88C5"><a href="#u5B89_u88C5" class="headerlink" title="安装"></a>安装</h4><p><a href="http://jingyan.baidu.com/article/d8072ac47aca0fec95cefd2d.html" target="_blank" rel="external">据说是史上最详细的hexo+git的安装说明</a><br>不过根据上面的文章搭建好应该是不能发布到git的,不知道别人是否可以，我是不可以，原因是少了一个hexo的git发布插件会报错</p>
-<h5 id="hexo_ERROR_Deployer_not_found_3A_github"><a href="#hexo_ERROR_Deployer_not_found_3A_github" class="headerlink" title="hexo ERROR Deployer not found: github"></a><code>hexo ERROR Deployer not found: github</code></h5><p>解决也是很方便：在本地的hexo根目录进行发布插件安装，然后根目录的配置文件_config.yaml中deplay type改成git<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/hexo/">hexo</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
-    </div>
-
       
       <div class="clearfix"></div>
     </div>
