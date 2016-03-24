@@ -148,7 +148,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/centos7/" style="font-size: 10px;">centos7</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/iterator/" style="font-size: 10px;">iterator</a> <a href="/tags/linux/" style="font-size: 15px;">linux</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/python-dict/" style="font-size: 10px;">python-dict</a> <a href="/tags/python-json/" style="font-size: 10px;">python-json</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+                        <a href="/tags/centos7/" style="font-size: 10px;">centos7</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/iterator/" style="font-size: 10px;">iterator</a> <a href="/tags/linux/" style="font-size: 15px;">linux</a> <a href="/tags/paramiko/" style="font-size: 10px;">paramiko</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/python-dict/" style="font-size: 10px;">python-dict</a> <a href="/tags/python-json/" style="font-size: 10px;">python-json</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
                     </div>
                 </section>
                 
@@ -229,6 +229,72 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-paramikotest" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/24/paramikotest/" class="article-date">
+      <time datetime="2016-03-24T01:33:36.000Z" itemprop="datePublished">2016-03-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/24/paramikotest/">使用python的paramiko来实现批量主机管理</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>python第三方模块paramiko，很多人都知道fabric这个linux强大的主机批量管理工具，其实底层fabric就是用到了paramiko<br>这边我用paramiko来实现一个linux批量主机管理</p>
+<h5 id="u529F_u80FD_u63CF_u8FF0"><a href="#u529F_u80FD_u63CF_u8FF0" class="headerlink" title="功能描述"></a>功能描述</h5><pre><code>1. 可以分组批量执行远端命令，且要支持sudo，且捕获命令执行的退出符来判断命令执行是否成功还是失败
+2. 可以put上传文件到服务器组，如果文件存在可以备份
+3. 可以从远端服务器组下载文件
+4. 多进程
+</code></pre><h5 id="u4EE3_u7801_u76EE_u5F55_u7ED3_u6784"><a href="#u4EE3_u7801_u76EE_u5F55_u7ED3_u6784" class="headerlink" title="代码目录结构"></a>代码目录结构</h5><p>├── conf<br>│   ├── host_list.conf   # 配置文件定义主机组，主机ip，ssh用户,密码或者ssh私钥地址<br>│<br>├── logs<br>│   └── paramiko.log     # 日志是必须要有的<br>├── ssh_client.py        # 执行文件<br>└── ssh_lib.py           # 代码lib</p>
+<h5 id="u914D_u7F6E_u6587_u4EF6_host_list-conf"><a href="#u914D_u7F6E_u6587_u4EF6_host_list-conf" class="headerlink" title="配置文件 host_list.conf"></a>配置文件 host_list.conf</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">### host_list.conf 说明</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">###### global</span></span><br><span class="line">    概述: 全局性配置,如果下面的主机组没有设置用户名和密码就采用global</span><br><span class="line">    ssh_user: ssh用户名</span><br><span class="line">    ssh_passwd : ssh密码</span><br><span class="line">    ssh_key : ssh用户私钥文件路径(绝对路径) 可以不写,如果ssh_key存在将优先使用,ssh_key</span><br><span class="line"></span><br><span class="line"><span class="preprocessor">###### redis|mysql|.......</span></span><br><span class="line">    概述: 定义ssh 的group</span><br><span class="line">    ssh_user: ssh用户名 ,可以不写将采用global 的设置</span><br><span class="line">    ssh_passwd: ssh密码, 同上也是可以不写,采用global</span><br><span class="line">    ssh_key : 私钥路径,也可以不写</span><br><span class="line">    hostlist: 主机ip列表用,做分隔,这个必须要写,写主机名也可以,只要能够解析到</span><br><span class="line">    如果要指定端口使用<span class="string">":"</span>做分隔例如: hostlist = <span class="number">192.168</span><span class="number">.2</span><span class="number">.1</span>:<span class="number">22</span>,<span class="number">192.168</span><span class="number">.2</span><span class="number">.2</span>:<span class="number">9922</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/python/">python</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/paramiko/">paramiko</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
   
     <article id="post-pythonfile" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -798,71 +864,6 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
     </div>
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-python-list-tuple" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/20/python-list-tuple/" class="article-date">
-      <time datetime="2016-01-20T08:20:18.000Z" itemprop="datePublished">2016-01-20</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/20/python-list-tuple/">python中的列表和元组</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h4 id="List_u548CTuple_u533A_u522B"><a href="#List_u548CTuple_u533A_u522B" class="headerlink" title="List和Tuple区别"></a>List和Tuple区别</h4><p>python中list是可变数据，创建以后是可以对数据进行写操作的，但是tuple元组是不可变的，只能进行读的操作<br>list和tuple 通过 <code>list()</code>和<code>tuple()</code> 可以互相转换<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/python/">python</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/01/20/python-list-tuple/#more">more >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>

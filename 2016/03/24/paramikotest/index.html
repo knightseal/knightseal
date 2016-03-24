@@ -3,19 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>python字典 | Seal Tips</title>
+  <title>使用python的paramiko来实现批量主机管理 | Seal Tips</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Python 字典 dictpython字典是序列化数据非常方便,就像最简单的关系型数据库,可以和list互相嵌套a = {key:value} 建议还是使用双引号来包裹字符串，这样子以后转存为字符串后再次序列号时方便dict 有几个关键字: “无序的,可变对象,key唯一,可嵌套”">
+  <meta name="description" content="python第三方模块paramiko，很多人都知道fabric这个linux强大的主机批量管理工具，其实底层fabric就是用到了paramiko这边我用paramiko来实现一个linux批量主机管理
+功能描述1. 可以分组批量执行远端命令，且要支持sudo，且捕获命令执行的退出符来判断命令执行是否成功还是失败
+2. 可以put上传文件到服务器组，如果文件存在可以备份
+3. 可以从远端服务器组">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python字典">
-<meta property="og:url" content="http://knightseal.github.io/2016/01/26/python-info-dict/index.html">
+<meta property="og:title" content="使用python的paramiko来实现批量主机管理">
+<meta property="og:url" content="http://knightseal.github.io/2016/03/24/paramikotest/index.html">
 <meta property="og:site_name" content="Seal Tips">
-<meta property="og:description" content="Python 字典 dictpython字典是序列化数据非常方便,就像最简单的关系型数据库,可以和list互相嵌套a = {key:value} 建议还是使用双引号来包裹字符串，这样子以后转存为字符串后再次序列号时方便dict 有几个关键字: “无序的,可变对象,key唯一,可嵌套”">
-<meta property="og:image" content="http://img.yseal.cn/python_dict.png">
-<meta property="og:updated_time" content="2016-01-26T12:11:02.000Z">
+<meta property="og:description" content="python第三方模块paramiko，很多人都知道fabric这个linux强大的主机批量管理工具，其实底层fabric就是用到了paramiko这边我用paramiko来实现一个linux批量主机管理
+功能描述1. 可以分组批量执行远端命令，且要支持sudo，且捕获命令执行的退出符来判断命令执行是否成功还是失败
+2. 可以put上传文件到服务器组，如果文件存在可以备份
+3. 可以从远端服务器组">
+<meta property="og:updated_time" content="2016-03-24T01:43:09.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python字典">
-<meta name="twitter:description" content="Python 字典 dictpython字典是序列化数据非常方便,就像最简单的关系型数据库,可以和list互相嵌套a = {key:value} 建议还是使用双引号来包裹字符串，这样子以后转存为字符串后再次序列号时方便dict 有几个关键字: “无序的,可变对象,key唯一,可嵌套”">
+<meta name="twitter:title" content="使用python的paramiko来实现批量主机管理">
+<meta name="twitter:description" content="python第三方模块paramiko，很多人都知道fabric这个linux强大的主机批量管理工具，其实底层fabric就是用到了paramiko这边我用paramiko来实现一个linux批量主机管理
+功能描述1. 可以分组批量执行远端命令，且要支持sudo，且捕获命令执行的退出符来判断命令执行是否成功还是失败
+2. 可以put上传文件到服务器组，如果文件存在可以备份
+3. 可以从远端服务器组">
   
     <link rel="alternative" href="/atom.xml" title="Seal Tips" type="application/atom+xml">
   
@@ -227,11 +235,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-python-info-dict" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-paramikotest" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/01/26/python-info-dict/" class="article-date">
-      <time datetime="2016-01-26T11:59:52.000Z" itemprop="datePublished">2016-01-26</time>
+      <a href="/2016/03/24/paramikotest/" class="article-date">
+      <time datetime="2016-03-24T01:33:36.000Z" itemprop="datePublished">2016-03-24</time>
 </a>
     </div>
   
@@ -244,7 +252,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      python字典
+      使用python的paramiko来实现批量主机管理
     </h1>
   
 
@@ -259,7 +267,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/paramiko/">paramiko</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -269,20 +277,13 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h4 id="Python__u5B57_u5178_dict"><a href="#Python__u5B57_u5178_dict" class="headerlink" title="Python 字典 dict"></a>Python 字典 dict</h4><p>python字典是序列化数据非常方便,就像最简单的关系型数据库,可以和list互相嵌套<br>a = {key:value} 建议还是使用双引号来包裹字符串，这样子以后转存为字符串后再次序列号时方便<br>dict 有几个关键字: “无序的,可变对象,key唯一,可嵌套”<br><a id="more"></a></p>
-<h4 id="dict_func"><a href="#dict_func" class="headerlink" title="dict func"></a>dict func</h4><h6 id="clear_28_29"><a href="#clear_28_29" class="headerlink" title="clear()"></a><code>clear()</code></h6><p>清除字典数据 like list clear<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a  = &#123;<span class="string">"name"</span>:<span class="number">1</span>&#125;</span><br><span class="line">a.clear()</span><br><span class="line">a</span><br><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure></p>
-<h6 id="fromkeys_28_29"><a href="#fromkeys_28_29" class="headerlink" title="fromkeys()"></a><code>fromkeys()</code></h6><p>用于生成字典，fromkeys来源于可迭代的对象比如元组或者list<br>dict.fromkeys(seq,value)，value是可选的，也就说把可迭代对象里面的元素拿出来当字典的key，vlaue是可选的如果没有value那所有的key就是None<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = (<span class="string">'name'</span>,<span class="string">'age'</span>)</span><br><span class="line">b = dict.fromkeys(a,<span class="string">'something'</span>)</span><br><span class="line">b</span><br><span class="line">&#123;<span class="string">'age'</span>: <span class="string">'something'</span>, <span class="string">'name'</span>: <span class="string">'something'</span>&#125;</span><br></pre></td></tr></table></figure></p>
-<h6 id="get_28_29"><a href="#get_28_29" class="headerlink" title="get()"></a><code>get()</code></h6><p>从字典中拿出指定的key的value。如果key不存在不会异常只是为None,且还可以指定这个key不存在的还会给一个预设值<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="string">"name"</span>:<span class="number">1</span>&#125;</span><br><span class="line">a.get(<span class="string">'name'</span>)</span><br><span class="line"><span class="number">1</span></span><br><span class="line">b = a.get(<span class="string">'age'</span>)</span><br><span class="line">print(b)</span><br><span class="line"><span class="keyword">None</span></span><br><span class="line">c = a.get(<span class="string">'age'</span>,<span class="number">10</span>)  <span class="comment"># age不存在，故返回10</span></span><br><span class="line">c</span><br><span class="line"><span class="number">10</span></span><br></pre></td></tr></table></figure></p>
-<h6 id="items_28_29"><a href="#items_28_29" class="headerlink" title="items()"></a><code>items()</code></h6><p>把字典里面的key和value 作为一个元组填装在一个迭代器中<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="string">"name"</span>:<span class="number">1</span>&#125;</span><br><span class="line">b = a.items()</span><br><span class="line">b</span><br><span class="line">dict_items([(<span class="string">'age'</span>, <span class="number">2</span>), (<span class="string">'name'</span>, <span class="number">1</span>)])</span><br></pre></td></tr></table></figure></p>
-<h6 id="keys_28_29"><a href="#keys_28_29" class="headerlink" title="keys()"></a><code>keys()</code></h6><p>返回字典中的所有key的list<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="string">"name"</span>:<span class="number">1</span>&#125;</span><br><span class="line">b = a.keys()</span><br><span class="line">b</span><br><span class="line">dict_keys([<span class="string">'age'</span>, <span class="string">'name'</span>])</span><br></pre></td></tr></table></figure></p>
-<h6 id="pop_28_29"><a href="#pop_28_29" class="headerlink" title="pop()"></a><code>pop()</code></h6><p>类似redis中的pop，从字典中拿出一个key返回key并删除<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a</span><br><span class="line">&#123;<span class="string">'age'</span>: <span class="number">2</span>, <span class="string">'name'</span>: <span class="number">1</span>&#125;</span><br><span class="line">a.pop(<span class="string">'name'</span>)</span><br><span class="line"><span class="number">1</span></span><br><span class="line">a</span><br><span class="line">&#123;<span class="string">'age'</span>: <span class="number">2</span>&#125;</span><br></pre></td></tr></table></figure></p>
-<h6 id="popitem_28_29"><a href="#popitem_28_29" class="headerlink" title="popitem()"></a><code>popitem()</code></h6><p>从字典中拿出key和value返回key并删除,区别于pop()方法,<br>不需要指定参数，随机返回，且key和value放在一个元组中<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="string">'age'</span>: <span class="number">2</span>, <span class="string">'name'</span>: <span class="number">1</span>&#125;</span><br><span class="line">a.popitem()</span><br><span class="line">(<span class="string">'name'</span>,<span class="number">1</span>)</span><br><span class="line">a</span><br><span class="line">&#123;<span class="string">'age'</span>: <span class="number">2</span>&#125;</span><br></pre></td></tr></table></figure></p>
-<h6 id="setdefault_28_29"><a href="#setdefault_28_29" class="headerlink" title="setdefault()"></a><code>setdefault()</code></h6><p>如果键在字典中，返回这个键所对应的值。如果键不在字典中，向字典 中插入这个键，<br>并且以default为这个键的值，并返回 default。default的默认值为None</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="string">'name'</span>:<span class="string">'xiaoming'</span>&#125;</span><br><span class="line">a.setdefault(‘name’,<span class="number">1</span>) <span class="comment"># 由于name存在 所以直接返回name的value</span></span><br><span class="line">xiaoming   </span><br><span class="line">a.setdefault(‘age’,<span class="number">1</span>)  <span class="comment"># 由于age不存在，故插入age 把default的值作为key:aget的value</span></span><br><span class="line">a</span><br><span class="line">a = &#123;<span class="string">'name'</span>:<span class="string">'xiaoming'</span>,<span class="string">'age'</span>:<span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure>
-<h6 id="update_28_29"><a href="#update_28_29" class="headerlink" title="update()"></a><code>update()</code></h6><p>update方法可以使用一个字典来更新字典,也可以使用参数传递类似dict函数一样的方式更新一个字典,<br>但是同样和dict函数类似,键是变量时也只取字面值<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="string">"name"</span>:<span class="number">1</span>&#125;</span><br><span class="line">a.update(age=<span class="number">1</span>)</span><br><span class="line">a</span><br><span class="line">&#123;<span class="string">'age'</span>: <span class="number">1</span>, <span class="string">'name'</span>: <span class="number">1</span>&#125;</span><br><span class="line">b = &#123;<span class="string">'other'</span>:<span class="number">3</span>&#125;  相当于把b字典的内容更新到a去</span><br><span class="line">a.update(b)</span><br><span class="line">a</span><br><span class="line">&#123;<span class="string">'age'</span>: <span class="number">1</span>, <span class="string">'other'</span>: <span class="number">3</span>, <span class="string">'name'</span>: <span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure></p>
-<h6 id="values"><a href="#values" class="headerlink" title="values"></a><code>values</code></h6><p>values和keys类似，keys返回所有的key而values 返回的是所有的value<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="string">'age'</span>: <span class="number">1</span>, <span class="string">'other'</span>: <span class="number">3</span>, <span class="string">'name'</span>: <span class="number">1</span>&#125;</span><br><span class="line">a.values()</span><br><span class="line">[<span class="number">1</span>,<span class="number">3</span>,<span class="number">1</span>]</span><br></pre></td></tr></table></figure></p>
-<h4 id="u6700_u540E_u4E00_u4E0Bpython2_u548Cpython3__u5B57_u5178_u65B9_u6CD5_u7684_u533A_u522B"><a href="#u6700_u540E_u4E00_u4E0Bpython2_u548Cpython3__u5B57_u5178_u65B9_u6CD5_u7684_u533A_u522B" class="headerlink" title="最后一下python2和python3 字典方法的区别"></a>最后一下python2和python3 字典方法的区别</h4><p><img src="http://img.yseal.cn/python_dict.png" alt=""></p>
-
+        <p>python第三方模块paramiko，很多人都知道fabric这个linux强大的主机批量管理工具，其实底层fabric就是用到了paramiko<br>这边我用paramiko来实现一个linux批量主机管理</p>
+<h5 id="u529F_u80FD_u63CF_u8FF0"><a href="#u529F_u80FD_u63CF_u8FF0" class="headerlink" title="功能描述"></a>功能描述</h5><pre><code>1. 可以分组批量执行远端命令，且要支持sudo，且捕获命令执行的退出符来判断命令执行是否成功还是失败
+2. 可以put上传文件到服务器组，如果文件存在可以备份
+3. 可以从远端服务器组下载文件
+4. 多进程
+</code></pre><h5 id="u4EE3_u7801_u76EE_u5F55_u7ED3_u6784"><a href="#u4EE3_u7801_u76EE_u5F55_u7ED3_u6784" class="headerlink" title="代码目录结构"></a>代码目录结构</h5><p>├── conf<br>│   ├── host_list.conf   # 配置文件定义主机组，主机ip，ssh用户,密码或者ssh私钥地址<br>│<br>├── logs<br>│   └── paramiko.log     # 日志是必须要有的<br>├── ssh_client.py        # 执行文件<br>└── ssh_lib.py           # 代码lib</p>
+<h5 id="u914D_u7F6E_u6587_u4EF6_host_list-conf"><a href="#u914D_u7F6E_u6587_u4EF6_host_list-conf" class="headerlink" title="配置文件 host_list.conf"></a>配置文件 host_list.conf</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">### host_list.conf 说明</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">###### global</span></span><br><span class="line">    概述: 全局性配置,如果下面的主机组没有设置用户名和密码就采用global</span><br><span class="line">    ssh_user: ssh用户名</span><br><span class="line">    ssh_passwd : ssh密码</span><br><span class="line">    ssh_key : ssh用户私钥文件路径(绝对路径) 可以不写,如果ssh_key存在将优先使用,ssh_key</span><br><span class="line"></span><br><span class="line"><span class="preprocessor">###### redis|mysql|.......</span></span><br><span class="line">    概述: 定义ssh 的group</span><br><span class="line">    ssh_user: ssh用户名 ,可以不写将采用global 的设置</span><br><span class="line">    ssh_passwd: ssh密码, 同上也是可以不写,采用global</span><br><span class="line">    ssh_key : 私钥路径,也可以不写</span><br><span class="line">    hostlist: 主机ip列表用,做分隔,这个必须要写,写主机名也可以,只要能够解析到</span><br><span class="line">    如果要指定端口使用<span class="string">":"</span>做分隔例如: hostlist = <span class="number">192.168</span><span class="number">.2</span><span class="number">.1</span>:<span class="number">22</span>,<span class="number">192.168</span><span class="number">.2</span><span class="number">.2</span>:<span class="number">9922</span></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -293,16 +294,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/02/03/python-func/">
-                    python中的函数
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/01/25/python-dict/">
-                    Python中的字典和json的比较和eval内置方法
+                <a href="/2016/03/21/pythonfile/">
+                    python文件操作
                 </a>
             </div>
         
@@ -313,7 +308,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Python__u5B57_u5178_dict"><span class="toc-number">1.</span> <span class="toc-text">Python 字典 dict</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dict_func"><span class="toc-number">2.</span> <span class="toc-text">dict func</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#clear_28_29"><span class="toc-number">2.0.1.</span> <span class="toc-text">clear()</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#fromkeys_28_29"><span class="toc-number">2.0.2.</span> <span class="toc-text">fromkeys()</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#get_28_29"><span class="toc-number">2.0.3.</span> <span class="toc-text">get()</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#items_28_29"><span class="toc-number">2.0.4.</span> <span class="toc-text">items()</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#keys_28_29"><span class="toc-number">2.0.5.</span> <span class="toc-text">keys()</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#pop_28_29"><span class="toc-number">2.0.6.</span> <span class="toc-text">pop()</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#popitem_28_29"><span class="toc-number">2.0.7.</span> <span class="toc-text">popitem()</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#setdefault_28_29"><span class="toc-number">2.0.8.</span> <span class="toc-text">setdefault()</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#update_28_29"><span class="toc-number">2.0.9.</span> <span class="toc-text">update()</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#values"><span class="toc-number">2.0.10.</span> <span class="toc-text">values</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u6700_u540E_u4E00_u4E0Bpython2_u548Cpython3__u5B57_u5178_u65B9_u6CD5_u7684_u533A_u522B"><span class="toc-number">3.</span> <span class="toc-text">最后一下python2和python3 字典方法的区别</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#u529F_u80FD_u63CF_u8FF0"><span class="toc-number">1.</span> <span class="toc-text">功能描述</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u4EE3_u7801_u76EE_u5F55_u7ED3_u6784"><span class="toc-number">2.</span> <span class="toc-text">代码目录结构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u914D_u7F6E_u6587_u4EF6_host_list-conf"><span class="toc-number">3.</span> <span class="toc-text">配置文件 host_list.conf</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -377,7 +372,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/01/26/python-info-dict/" data-title="python字典" data-url="http://knightseal.github.io/2016/01/26/python-info-dict/"></div>
+    <div class="ds-thread" data-thread-key="2016/03/24/paramikotest/" data-title="使用python的paramiko来实现批量主机管理" data-url="http://knightseal.github.io/2016/03/24/paramikotest/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -401,15 +396,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/02/03/python-func/" title="上一篇: python中的函数">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/01/25/python-dict/" title="下一篇: Python中的字典和json的比较和eval内置方法">
+            <a href="/2016/03/21/pythonfile/" title="下一篇: python文件操作">
                 <i class="fa fa-angle-right"></i>
             </a>
         
