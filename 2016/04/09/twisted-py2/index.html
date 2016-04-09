@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>2016重新python | Seal Tips</title>
+  <title>twisted 示例文件传输 | Seal Tips</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="写给自己：坚持前面看了Alex的python自动化之路第一章对于他自己的一些经历，这么想想自己也是差不多是在2012年的时候开始接触python，当时写了上百个shell脚本，总觉得shell在运维管理中还是有些短板，其实一直知道python,哪怕重来没有不知道有python但是在运维面试很多jd都会写一条，精通shell，python，perl，慢慢的自己也开始自学python,到现在也有几年了">
+  <meta name="description" content="服务端123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990#!/usr/bin/env python# -*-">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2016重新python">
-<meta property="og:url" content="http://knightseal.github.io/2016/01/20/rebuild/index.html">
+<meta property="og:title" content="twisted 示例文件传输">
+<meta property="og:url" content="http://knightseal.github.io/2016/04/09/twisted-py2/index.html">
 <meta property="og:site_name" content="Seal Tips">
-<meta property="og:description" content="写给自己：坚持前面看了Alex的python自动化之路第一章对于他自己的一些经历，这么想想自己也是差不多是在2012年的时候开始接触python，当时写了上百个shell脚本，总觉得shell在运维管理中还是有些短板，其实一直知道python,哪怕重来没有不知道有python但是在运维面试很多jd都会写一条，精通shell，python，perl，慢慢的自己也开始自学python,到现在也有几年了">
-<meta property="og:updated_time" content="2016-01-21T07:03:13.000Z">
+<meta property="og:description" content="服务端123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990#!/usr/bin/env python# -*-">
+<meta property="og:updated_time" content="2016-04-09T00:30:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2016重新python">
-<meta name="twitter:description" content="写给自己：坚持前面看了Alex的python自动化之路第一章对于他自己的一些经历，这么想想自己也是差不多是在2012年的时候开始接触python，当时写了上百个shell脚本，总觉得shell在运维管理中还是有些短板，其实一直知道python,哪怕重来没有不知道有python但是在运维面试很多jd都会写一条，精通shell，python，perl，慢慢的自己也开始自学python,到现在也有几年了">
+<meta name="twitter:title" content="twisted 示例文件传输">
+<meta name="twitter:description" content="服务端123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990#!/usr/bin/env python# -*-">
   
     <link rel="alternative" href="/atom.xml" title="Seal Tips" type="application/atom+xml">
   
@@ -226,11 +226,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-rebuild" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-twisted-py2" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/01/20/rebuild/" class="article-date">
-      <time datetime="2016-01-20T07:55:33.000Z" itemprop="datePublished">2016-01-20</time>
+      <a href="/2016/04/09/twisted-py2/" class="article-date">
+      <time datetime="2016-04-09T00:08:14.000Z" itemprop="datePublished">2016-04-09</time>
 </a>
     </div>
   
@@ -243,7 +243,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      2016重新python
+      twisted 示例文件传输
     </h1>
   
 
@@ -258,7 +258,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/twisted/">twisted</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -268,8 +268,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h4 id="u5199_u7ED9_u81EA_u5DF1_uFF1A_u575A_u6301"><a href="#u5199_u7ED9_u81EA_u5DF1_uFF1A_u575A_u6301" class="headerlink" title="写给自己：坚持"></a>写给自己：坚持</h4><p>前面看了Alex的python自动化之路第一章对于他自己的一些经历，这么想想自己也是差不多是在2012年的时候开始接触python，当时写了上百个shell脚本，总觉得shell在运维管理中还是有些短板，其实一直知道python,哪怕重来没有不知道有python但是在运维面试很多jd都会写一条，精通shell，python，perl，慢慢的自己也开始自学python<br>,到现在也有几年了，从2013年开始陆陆续续的差不多都用python来完成需求功能和平时的工作，但是还是觉得自己的水平还是这么不行，只知其然不知其所以然，各种百度各种google，幸好公司有一位大牛，经常也会请教，就在这一步步的慢慢前行中，最近遇到sprak新版本更新发现早在1.5.0版本的spark的Dstarem已经支持python了,非常高兴，边尝试用python实现Sprark的的作业任务，其实官方给的例子已经非常简练和明确了，但是我还是使用了接近一天的时间才看懂，虽然最后做到了，虽然挺开心，但是莫名的沮丧<br>几乎是用排除法不断的尝试出来，其实我自己一直热爱运维，但是实际生活中运维的地位往往没有研发受到重视，在大部分公司研发好比厨师，是能够真正开发出产品，做得出东西的，而运维更像是服务员，这就是为什么小公司其实是不需要运维的，就像你见过小饭店里有所谓的服务吗？所以我自己的发展方向就是运维研发，我要做一个会“做饭的服务员”<br>再想想真的自己很早以前就有blog ，但是很少写文章，感觉自己做很多事情都没有坚持下去，2016年，写给自己，就2个字 “坚持!”</p>
-
+        <h5 id="u670D_u52A1_u7AEF"><a href="#u670D_u52A1_u7AEF" class="headerlink" title="服务端"></a>服务端</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># This is the Twisted Fast Poetry Server, version 1.0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> optparse, os</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> twisted.internet.protocol <span class="keyword">import</span> ServerFactory, Protocol</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">"""</span><br><span class="line">这个函数定义了服务端执行的参数有2个port和iface【端口和网络接口】以及返回获取参数和值以及文件名路径</span><br><span class="line">"""</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">parse_args</span><span class="params">()</span>:</span></span><br><span class="line">    usage = <span class="string">"""usage: %prog [options] poetry-file</span><br><span class="line"></span><br><span class="line">This is the Fast Poetry Server, Twisted edition.</span><br><span class="line">Run it like this:</span><br><span class="line"></span><br><span class="line">  python twisted_sendfile.py &lt;path-to-poetry-file&gt;</span><br><span class="line"></span><br><span class="line">If you are in the base directory of the twisted-intro package,</span><br><span class="line">you could run it like this:</span><br><span class="line"></span><br><span class="line">  python twisted-server-1/fastpoetry.py poetry/ecstasy.txt</span><br><span class="line"></span><br><span class="line">to serve up John Donne's Ecstasy, which I know you want to do.</span><br><span class="line">"""</span></span><br><span class="line">    <span class="comment"># 实例化OptionParser</span></span><br><span class="line">    parser = optparse.OptionParser(usage)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 关于port参数的相关定义，帮助是的说明，传值的类型，</span></span><br><span class="line">    help = <span class="string">"The port to listen on. Default to a random available port."</span></span><br><span class="line">    parser.add_option(<span class="string">'--port'</span>, type=<span class="string">'int'</span>, help=help)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 关于iface参数的相关定义，帮助是的说明，传值的类型，</span></span><br><span class="line">    help = <span class="string">"The interface to listen on. Default is localhost."</span></span><br><span class="line">    parser.add_option(<span class="string">'--iface'</span>, help=help, default=<span class="string">'localhost'</span>)</span><br><span class="line">     </span><br><span class="line">    <span class="comment"># 通过parse_args()方法获取到option，args 分别赋给这2个变量</span></span><br><span class="line">    options, args = parser.parse_args()</span><br><span class="line">    <span class="comment">#print("--arg:",options,args)</span></span><br><span class="line">    <span class="comment">#print("--&gt;",options.port)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 如果指定了多个文件，会出现错误，这里定义了一次传一个文件</span></span><br><span class="line">    <span class="keyword">if</span> len(args) != <span class="number">1</span>:</span><br><span class="line">        parser.error(<span class="string">'Provide exactly one poetry file.'</span>)</span><br><span class="line">    poetry_file = args[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 如果文件不存在，的错误异常</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(args[<span class="number">0</span>]):</span><br><span class="line">        parser.error(<span class="string">'No such file: %s'</span> % poetry_file)</span><br><span class="line">    <span class="comment"># 返回脚本选项和要传输的文件路径</span></span><br><span class="line">    <span class="keyword">return</span> options, poetry_file</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义Protocol （用于连接建立以后，如果对数据进行交互，以及连接的关闭）</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PoetryProtocol</span><span class="params">(Protocol)</span>:</span> <span class="comment">#handle</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">connectionMade</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        当连接建立以后，直接发送文件，然后关闭连接</span><br><span class="line">        """</span></span><br><span class="line">        self.transport.write(self.factory.poem)</span><br><span class="line">        self.transport.loseConnection()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 集成了ServerFactory的factory 定义了协议对象的生成，另外为了让构造时能够获取到文件的句柄，重写了构造函数， </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PoetryFactory</span><span class="params">(ServerFactory)</span>:</span> <span class="comment">#基础类</span></span><br><span class="line">    protocol = PoetryProtocol</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, poem)</span>:</span></span><br><span class="line">        self.poem = poem</span><br><span class="line"></span><br><span class="line"><span class="comment"># 主要运行程序，就相当于上面几个部分的组合</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 获取参数和文件路径</span></span><br><span class="line">    options, poetry_file = parse_args() </span><br><span class="line">    <span class="comment"># 得到要传输的文件句柄</span></span><br><span class="line">    poem = open(poetry_file).read()</span><br><span class="line">    <span class="comment"># 实例化factory类，由于重写了构造函数，把文件的句柄作为参数传入进去</span></span><br><span class="line">    factory = PoetryFactory(poem)</span><br><span class="line">    <span class="keyword">from</span> twisted.internet <span class="keyword">import</span> reactor</span><br><span class="line">    <span class="comment"># 实例化监听对象，默认使用9000端口</span></span><br><span class="line">    port = reactor.listenTCP(options.port <span class="keyword">or</span> <span class="number">9000</span>, factory,</span><br><span class="line">                             interface=options.iface)</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Serving %s on %s.'</span> % (poetry_file, port.getHost())</span><br><span class="line">    <span class="comment"># 调用run方法</span></span><br><span class="line">    reactor.run()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
       
     </div>
     
@@ -280,16 +280,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/01/20/python-list-tuple/">
-                    python中的列表和元组
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/01/19/hexo-404/">
-                    hexo-404
+                <a href="/2016/04/08/twisted-py/">
+                    twisted 网络框架例子ECHO
                 </a>
             </div>
         
@@ -300,7 +294,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#u5199_u7ED9_u81EA_u5DF1_uFF1A_u575A_u6301"><span class="toc-number">1.</span> <span class="toc-text">写给自己：坚持</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#u670D_u52A1_u7AEF"><span class="toc-number">1.</span> <span class="toc-text">服务端</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -364,7 +358,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/01/20/rebuild/" data-title="2016重新python" data-url="http://knightseal.github.io/2016/01/20/rebuild/"></div>
+    <div class="ds-thread" data-thread-key="2016/04/09/twisted-py2/" data-title="twisted 示例文件传输" data-url="http://knightseal.github.io/2016/04/09/twisted-py2/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -388,15 +382,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/01/20/python-list-tuple/" title="上一篇: python中的列表和元组">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/01/19/hexo-404/" title="下一篇: hexo-404">
+            <a href="/2016/04/08/twisted-py/" title="下一篇: twisted 网络框架例子ECHO">
                 <i class="fa fa-angle-right"></i>
             </a>
         
